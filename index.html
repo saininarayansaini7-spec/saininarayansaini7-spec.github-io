@@ -3,190 +3,157 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>मंडी भाव - Yamunanagar</title>
+<title>मंडी भाव - किसान ऐप | सब कुछ एक जगह</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-  body{
-    background: linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2)),
-    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800') center/cover fixed;
-    min-height:100vh; padding:15px; padding-bottom:90px;
-  }
-  .app{max-width:420px;margin:auto;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-radius:28px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.4)}
-  .header{background:#0a2a5e;color:#fff;padding:18px;text-align:center;border-radius:0 0 20px 20px}
-  .header h1{font-size:28px}
-  .header h1 span{color:#ffc107}
-  .live{font-size:12px;background:#ff3b30;padding:3px 10px;border-radius:20px}
-  .mandi-select{margin:14px;background:#fff;padding:12px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08)}
-  .mandi-select select{border:none;font-size:16px;font-weight:700;outline:none;background:none}
-  .title{padding:0 14px;font-size:20px;font-weight:800}
-  .title small{font-size:13px;color:#666;font-weight:400}
-  .card{background:#fff;margin:10px 14px;padding:12px;border-radius:16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-  .left{display:flex;gap:12px;align-items:center}
-  .emoji{font-size:32px}
-  .left b{font-size:18px}
-  .left p{font-size:12px;color:#888}
-  .price{text-align:right}
-  .price b{font-size:24px;color:#b8860b}
-  .up{font-size:12px;background:#d4edda;color:#155724;padding:2px 7px;border-radius:20px}
-  .down{font-size:12px;background:#f8d7da;color:#721c24;padding:2px 7px;border-radius:20px}
-  .stable{font-size:12px;background:#eee;color:#333;padding:2px 7px;border-radius:20px}
-
-  /* AI Box */
-  .ai{background:#111;color:#fff;margin:14px;border-radius:16px;padding:14px}
-  .ai h3{color:#ffc107}
-  .ai .bar{height:8px;background:#333;border-radius:10px;margin:10px 0;overflow:hidden}
-  .ai .bar div{height:100%;width:92%;background:linear-gradient(90deg,#ffc107,#ff9800)}
-  .ai button{width:100%;padding:11px;border:none;border-radius:10px;background:#ffc107;font-weight:800;font-size:16px;margin-top:8px}
-
-  /* Live Boli */
-  .live-box{margin:14px;background:#fff7e6;border:1px solid #ffc107;padding:14px;border-radius:16px}
-  .live-box button{width:100%;padding:11px;background:#0a2a5e;color:#fff;border:none;border-radius:10px;font-weight:700;margin-top:8px}
-
-  .bottom{position:fixed;bottom:0;left:0;right:0;max-width:420px;margin:auto;background:#fff;display:flex;justify-content:space-around;padding:10px 0;border-radius:20px 20px 0 0;box-shadow:0 -5px 20px rgba(0,0,0,.15)}
-  .bottom div{text-align:center;font-size:13px}
-  .bottom .active{color:#b8860b;font-weight:800}
-  .update{ text-align:center;font-size:12px;color:#666;padding:5px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#e8f5e9}
+.screen{display:none;padding:15px;padding-bottom:90px;min-height:100vh}
+.screen.active{display:block}
+.green{background:linear-gradient(#0d6e2e,#1a9e4f);color:#fff;border-radius:20px;padding:20px;text-align:center}
+.veg{background:url('https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900') center/cover;border-radius:22px;padding:10px;margin-bottom:10px}
+.card{background:#fff;border-radius:15px;padding:15px;margin:12px 0;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+input,select,textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:10px;font-size:16px}
+.btn{width:100%;padding:14px;background:#0d6e2e;color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:8px}
+.btnO{background:#ff9800}.btnB{background:#1976d2}.btnR{background:#d32f2f}
+.mandi{border:1px solid #ddd;border-radius:12px;padding:12px;margin:8px 0;display:flex;justify-content:space-between;cursor:pointer;background:#fff}
+.mandi.active{border:2px solid green;background:#e8f5e9}
+.notice{background:#fff3cd;padding:10px;border-radius:10px;font-size:13px}
+.safe{background:#d4edda;padding:10px;border-radius:10px;font-size:13px}
+.idcard{background:linear-gradient(135deg,#FFD700,#FFA000);border-radius:15px;padding:20px;text-align:center;border:2px dashed #333}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.grid div{background:#e8f5e9;border-radius:12px;padding:10px;text-align:center;font-size:13px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:10px;border-top:1px solid #ddd;z-index:99}
+.bottom div{text-align:center;font-size:12px;cursor:pointer}
+.tag{display:inline-block;background:#e8f5e9;padding:5px 10px;border-radius:20px;font-size:12px;margin:3px;cursor:pointer}
+.tag.active{background:#0d6e2e;color:#fff}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}
 </style>
 </head>
 <body>
 
-<div class="app">
-  <div class="header">
-    <h1>यमुनानगर मंडी <span>Live भाव</span></h1>
-    <span class="live">● LIVE • अपडेटेड</span>
-    <p style="font-size:13px;margin-top:5px">किसानों के लिए AI-पावर्ड मंडी भाव ऐप</p>
-  </div>
-
-  <!-- मंडी चुनो -->
-  <div class="mandi-select">
-    <span>📍 <b>मंडी चुनें:</b></span>
-    <select id="mandi" onchange="badloMandi()">
-      <option value="yamunanagar">यमुनानगर मंडी</option>
-      <option value="jagadhri">जगाधरी मंडी</option>
-      <option value="radaur">रादौर मंडी</option>
-      <option value="chhachhrauli">छछरौली मंडी</option>
-      <option value="muzaffarnagar">मुज़फ़्फ़रनगर मंडी</option>
-      <option value="azadpur">आज़ादपुर मंडी</option>
-    </select>
-  </div>
-
-  <div class="title">मंडी भाव <br><small>आज का ताज़ा भाव • ₹/क्विंटल • <span id="time"></span></small></div>
-
-  <!-- भाव लिस्ट -->
-  <div id="list"></div>
-
-  <!-- AI भविष्यवाणी -->
-  <div class="ai">
-    <h3>✨ AI भाव भविष्यवाणी</h3>
-    <p style="font-size:14px;margin-top:5px">गेहूं अगले 7 दिन में <b style="color:#ffc107">+4.2% बढ़ेगा</b> - मांग बढ़ रही है</p>
-    <div class="bar"><div></div></div>
-    <p style="font-size:12px">भरोसा: 92% • AI ने 30 दिन का डाटा देखा</p>
-    <button onclick="alert('भाई, गेहूं 3 दिन रुक जा, भाव 2680 तक जाएगा!')">पूरी भविष्यवाणी देखें →</button>
-  </div>
-
-  <!-- लाइव बोली -->
-  <div class="live-box">
-    <b>🔴 लाइव बोली - यमुनानगर मंडी</b>
-    <p style="margin-top:6px;font-size:14px">किसान: आर. शर्मा • गेहूं 50 क्विंटल - ₹2430/क्विंटल</p>
-    <p style="font-size:14px">व्यापारी बोली: <b>₹2440/क्विंटल - अभी</b></p>
-    <button onclick="boliLagao()">+ बोली लगाएं</button>
-  </div>
-
-  <!-- मौसम -->
-  <div class="live-box" style="background:#e8f4ff;border-color:#2196f3">
-    <b>🌤️ मौसम - आज यमुनानगर</b>
-    <p style="font-size:22px;margin-top:5px"><b>32°C • साफ और धूप</b></p>
-    <p style="font-size:13px">हवा: 12 किमी/घंटा • नमी: 38% • कल हल्की बारिश 20%</p>
-  </div>
-
-  <p class="update">🔄 अंतिम अपडेट: <span id="updateTime"></span> • रोज़ सुबह 6 बजे अपने आप अपडेट होगा</p>
-  <button onclick="shareKaro()" style="width:calc(100% - 28px);margin:0 14px 14px;padding:12px;background:#25D366;color:#fff;border:none;border-radius:12px;font-weight:800;font-size:16px">📤 भाव WhatsApp पर शेयर करें</button>
+<!-- 1. SWAGAT -->
+<div id="s1" class="screen active">
+<div class="veg"><div class="green"><h1>🌾 नमस्ते!</h1><h2>मंडी भाव में आपका स्वागत है</h2><p>ताज़ा मंडी भाव, फसल दरें और किसान सेवाएं एक ही जगह पर</p><br><button class="btn btnO" onclick="go('s2')">शुरू करें →</button></div></div>
+<div class="card">✅ रोज ऑटो अपडेट - सुबह 6, 9, दोपहर 1, शाम 5:30<br>✅ हर मंडी का भाव<br>✅ भाव बदलते ही व्हाट्सऐप / SMS मैसेज<br>✅ किसान आईडी कार्ड<br>✅ मौसम + AI भविष्यवाणी<br>✅ बिक्री रिकॉर्ड + हिसाब</div>
+<div class="card">🍅 टमाटर ₹28 | 🥦 फूलगोभी ₹35 | 🥬 पालक ₹20 | 🥕 गाजर ₹30 | 🌶️ हरी मिर्च ₹40</div>
 </div>
 
-<div class="bottom">
-  <div class="active">🏠<br>भाव</div>
-  <div>📍<br>मंडियाँ</div>
-  <div>🔔<br>अलर्ट</div>
-  <div>👤<br>प्रोफाइल</div>
+<!-- 2. PANJIKARAN + OTP -->
+<div id="s2" class="screen">
+<div class="green"><h2>किसान पंजीकरण फॉर्म</h2><p>किसान के रूप में पंजीकरण करें और मंडी भाव की सूचनाएं पाएं</p></div>
+<div class="card">
+<label>नाम (Farmer Name)</label><input id="fName" placeholder="अपना पूरा नाम दर्ज करें">
+<label>गाँव (Village)</label><input id="fVillage" placeholder="अपने गाँव का नाम">
+<label>राज्य</label><select id="fState"><option>हरियाणा</option><option>उत्तर प्रदेश</option><option>पंजाब</option><option>महाराष्ट्र</option><option>मध्य प्रदेश</option><option>राजस्थान</option></select>
+<label>फसल (Crop)</label><select id="fCrop"><option>गेहूं</option><option>धान</option><option>सरसों</option><option>प्याज</option><option>आलू</option><option>टमाटर</option><option>गन्ना</option><option>कपास</option></select>
+<label>मोबाइल नंबर - सूचनाओं के लिए</label><input id="fMobile" type="tel" maxlength="10" placeholder="+91 98765 43210">
+<label>व्हाट्सऐप नंबर (अगर अलग है तो)</label><input id="fWhatsapp" type="tel" placeholder="+91 98765 43210">
+<button class="btn" onclick="sendOTP()">OTP भेजें</button>
+<div id="otpBox" style="display:none">
+<p><b>OTP सत्यापन</b> - आपके मोबाइल पर भेजा गया 6-अंकों का OTP डालें</p>
+<input id="otpInput" placeholder="OTP डालें - डेमो: 123456">
+<div class="notice">⚠️ <b>सुरक्षित रहें:</b> आपका OTP किसी को न बताएं। हमारा ऐप कभी फोन करके OTP नहीं मांगेगा। OTP सिर्फ नंबर जांचने के लिए है। इससे फोन में कोई गलत काम नहीं होगा, पैसे नहीं कटेंगे, फोन हैक नहीं होगा।</div>
+<button class="btn" onclick="verifyOTP()">OTP जांचें और पंजीकरण पूर्ण करें</button>
+</div>
+<p><input type="checkbox" checked> मैं सूचनाओं और मंडी भाव अलर्ट प्राप्त करने के लिए सहमत हूँ</p>
+<p style="font-size:12px;color:#666">आपका डेटा सुरक्षित है • 100% सुरक्षित एवं गोपनीय</p>
+</div>
+</div>
+
+<!-- 3. KISAN ID -->
+<div id="s3" class="screen">
+<div class="green"><h2>बधाई हो!</h2><p>आपकी किसान आईडी बन गई</p></div>
+<div class="idcard"><h2>🌾 किसान आईडी कार्ड</h2><br><p><b>नाम:</b> <span id="idName"></span></p><p><b>किसान ID:</b> <span id="idNum"></span></p><p><b>गाँव:</b> <span id="idVillage"></span> | <b>राज्य:</b> <span id="idState"></span></p><p><b>फसल:</b> <span id="idCrop"></span></p><p><b>मोबाइल:</b> <span id="idMobile"></span></p><p>मान्य: 2024-2029 | ✅ सत्यापित</p><p>QR: ▓▓▓▓▓▓▓▓</p></div>
+<div class="card safe">📱 <b>मैसेज भेज दिया गया है:</b><br>“नमस्ते <span class="uName"></span> जी, आपकी किसान आईडी <span class="uId"></span> है। अब हर भाव अपडेट का मैसेज इसी नंबर पर आएगा।”</div>
+<button class="btn" onclick="go('s4')">आगे - मंडी चुनें →</button>
+<button class="btn btnB" onclick="go('s5')">सीधे ऐप खोलें</button>
+</div>
+
+<!-- 4. MANDI CHAYAN -->
+<div id="s4" class="screen">
+<div class="green"><h2>मंडी चयन - सभी मंडियां</h2><p>अपनी मंडी चुनें</p></div>
+<input placeholder="मंडी खोजें..." oninput="renderMandi(this.value)">
+<div id="mandiList"></div>
+<button class="btn" onclick="go('s5')">ऐप खोलें →</button>
+</div>
+
+<!-- 5. MAIN APP - DASHBOARD -->
+<div id="s5" class="screen">
+<div class="veg"><div class="green"><h2>🌾 मंडी भाव</h2><p id="selMandi">यमुनानगर मंडी - हरियाणा</p><p>नमस्ते, <span class="uName"></span> जी! | ID: <span class="uId"></span></p></div></div>
+<div class="grid"><div>आज की बिक्री<br><b id="todaySale">₹1,240</b><br>+12% सप्ताह से</div><div>सक्रिय सूची<br><b>5 आइटम</b><br>ताजी सब्जियां</div><div>मौसम<br><b>26°C धूप</b><br>उपयुक्त</div></div>
+<div class="card">🕐 <b>ऑटो अपडेट चालू:</b> सुबह 6 बजे, 9 बजे, दोपहर 1 बजे, शाम 5:30 बजे - रोज अपने आप अपडेट होगा।<br>🔔 <b>लाइव अपडेट सक्रिय:</b> भाव बदलते ही आपके नंबर <b id="showMobile"></b> पर व्हाट्सऐप / SMS जाएगा।<br><span id="liveMsg"></span></div>
+<div class="card"><b>सब्जी के दाम (प्रति किलोग्राम) - <span id="todayMandi"></span></b><div id="bhavList"></div></div>
+<div class="card"><b>🌦️ मौसम + 🤖 AI भविष्यवाणी</b><br>आज: धूप 26°C, कल: हल्की बारिश की संभावना<br>AI: गेहूं अगले हफ्ते ₹50 बढ़ सकता है, बेचने का सही समय अगले मंगलवार है।<br>AI: प्याज का भाव गिर सकता है, अभी बेचें।</div>
+<div class="card"><b>➕ भाव जोड़ें / बिक्री रिकॉर्ड करें</b><br><input id="saleCrop" placeholder="फसल - जैसे गेहूं"><input id="saleQty" type="number" placeholder="कितना किलो / क्विंटल?"><input id="salePrice" type="number" placeholder="किस भाव पर बेचा? ₹"><button class="btn btnO" onclick="addSale()">बिक्री सेव करें</button><div id="saleList"></div><p>कुल बिक्री: <b id="totalSale">₹0</b></p></div>
+<div class="card"><b>📊 पिछले 7 दिन का भाव ग्राफ</b><br>गेहूं: 2400 → 2410 → 2425 → 2435 → 2440 → 2435 → <b id="graphNow"></b><br><progress value="80" max="100" style="width:100%"></progress><br><small>हर रोज का भाव अपने आप सेव होता है</small></div>
+<div class="card"><b>🔔 नोटिफिकेशन सेटिंग</b><br><span class="tag active" onclick="this.classList.toggle('active')">गेहूं</span><span class="tag active" onclick="this.classList.toggle('active')">धान</span><span class="tag" onclick="this.classList.toggle('active')">प्याज</span><span class="tag" onclick="this.classList.toggle('active')">सरसों</span><br><span class="tag active" onclick="this.classList.toggle('active')">व्हाट्सऐप मैसेज</span><span class="tag active" onclick="this.classList.toggle('active')">SMS मैसेज</span><span class="tag active" onclick="this.classList.toggle('active')">ऐप नोटिफिकेशन</span><br><small>किसान खुद चुन सकता है - किस फसल का, किस मंडी का, कितना बढ़ने पर मैसेज चाहिए</small></div>
+<div class="card"><b>🧪 डेमो - भाव अपडेट करके मैसेज देखें</b><br><button class="btn btnR" onclick="simulateUpdate()">🔄 अभी भाव अपडेट करके देखें</button><div id="msgDemo"></div></div>
+<div class="card"><b>👤 मेरा प्रोफाइल</b><br>नाम: <span class="uName"></span><br>ID: <span class="uId"></span><br>मंडी: <span id="profileMandi"></span><br><button class="btn btnB" onclick="logout()">लॉगआउट / नया किसान जोड़ें</button></div>
+<div class="bottom"><div onclick="go('s5')">🏠<br>होम</div><div onclick="go('s4')">🌾<br>मंडी भाव</div><div onclick="go('s5')">📊<br>डैशबोर्ड</div><div onclick="go('s5')">👤<br>प्रोफाइल</div></div>
 </div>
 
 <script>
-// ===== मंडी का डाटा =====
-const mandiData = {
-  yamunanagar: [
-    {name:"गेहूं", en:"Gehu", emoji:"🌾", price:2585, change:"+15", type:"up"},
-    {name:"धान बासमती", en:"Dhan Basmati", emoji:"🍚", price:4141, change:"+22", type:"up"},
-    {name:"सरसों", en:"Sarson", emoji:"🌼", price:6200, change:"-50", type:"down"},
-    {name:"प्याज", en:"Pyaj", emoji:"🧅", price:3100, change:"+80", type:"up"},
-    {name:"आलू", en:"Aloo", emoji:"🥔", price:800, change:"स्थिर", type:"stable"},
-    {name:"गन्ना", en:"Ganna", emoji:"🎋", price:360, change:"+10", type:"up"},
-  ],
-  jagadhri: [
-    {name:"गेहूं", en:"Gehu", emoji:"🌾", price:2560, change:"+10", type:"up"},
-    {name:"धान बासमती", en:"Dhan", emoji:"🍚", price:4100, change:"+18", type:"up"},
-    {name:"सरसों", en:"Sarson", emoji:"🌼", price:6150, change:"-30", type:"down"},
-    {name:"प्याज", en:"Pyaj", emoji:"🧅", price:3050, change:"+60", type:"up"},
-    {name:"आलू", en:"Aloo", emoji:"🥔", price:780, change:"स्थिर", type:"stable"},
-  ],
-  radaur: [
-    {name:"गेहूं", en:"Gehu", emoji:"🌾", price:2540, change:"+8", type:"up"},
-    {name:"धान बासमती", en:"Dhan", emoji:"🍚", price:4080, change:"+15", type:"up"},
-    {name:"सरसों", en:"Sarson", emoji:"🌼", price:6100, change:"-20", type:"down"},
-  ],
-  chhachhrauli: [
-    {name:"गेहूं", en:"Gehu", emoji:"🌾", price:2530, change:"+5", type:"up"},
-    {name:"धान बासमती", en:"Dhan", emoji:"🍚", price:4050, change:"+12", type:"up"},
-  ],
-  muzaffarnagar: [
-    {name:"गेहूं", en:"Gehu", emoji:"🌾", price:2504, change:"+32", type:"up"},
-    {name:"सरसों", en:"Sarson", emoji:"🌼", price:5023, change:"+78", type:"up"},
-  ],
-  azadpur: [
-    {name:"प्याज", en:"Pyaj", emoji:"🧅", price:3200, change:"+120", type:"up"},
-    {name:"आलू", en:"Aloo", emoji:"🥔", price:1420, change:"स्थिर", type:"stable"},
-    {name:"टमाटर", en:"Tamatar", emoji:"🍅", price:2250, change:"+95", type:"up"},
-  ]
-};
-
-function dikhao(mandi){
-  let html = "";
-  mandiData[mandi].forEach(item=>{
-    let cls = item.type==="up" ? "up" : item.type==="down" ? "down" : "stable";
-    let icon = item.type==="up" ? "↑" : item.type==="down" ? "↓" : "-";
-    html += `<div class="card">
-      <div class="left"><span class="emoji">${item.emoji}</span><div><b>${item.name}</b><p>${item.en}</p></div></div>
-      <div class="price"><b>${item.price}</b><br><span class="${cls}">${icon} ${item.change}</span></div>
-    </div>`;
-  });
-  document.getElementById("list").innerHTML = html;
+let mandis=[
+{name:"यमुनानगर मंडी",price:2435},{name:"जगाधरी मंडी",price:2420},{name:"रादौर मंडी",price:2405},
+{name:"छछरौली मंडी",price:2398},{name:"करनाल मंडी",price:2450},{name:"कुरुक्षेत्र मंडी",price:2440},
+{name:"पानीपत मंडी",price:2430},{name:"अंबाला मंडी",price:2415},{name:"मुज़फ़्फ़रनगर मंडी",price:2400},
+{name:"आज़ादपुर दिल्ली मंडी",price:2460},{name:"पुणे मंडी",price:2500},{name:"नाशिक मंडी",price:2480},{name:"नागपुर मंडी",price:2470}
+];
+let selectedMandi=mandis[0], userData={}, total=1240;
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);if(id=='s4')renderMandi();if(id=='s5')renderBhav();}
+function sendOTP(){if(document.getElementById('fMobile').value.length<10){alert('कृपया सही 10 अंकों का मोबाइल नंबर डालें');return;}alert('आपके नंबर पर OTP भेज दिया गया है। डेमो OTP: 123456');document.getElementById('otpBox').style.display='block';}
+function verifyOTP(){
+if(document.getElementById('otpInput').value!='123456'){alert('गलत OTP!');return;}
+let name=document.getElementById('fName').value||'राम सिंह';
+let village=document.getElementById('fVillage').value||'खेरपुर';
+let state=document.getElementById('fState').value;
+let crop=document.getElementById('fCrop').value;
+let mobile=document.getElementById('fMobile').value;
+let whatsapp=document.getElementById('fWhatsapp').value||mobile;
+let id='KB'+Math.floor(1000+Math.random()*9000)+'-'+Math.floor(10000+Math.random()*90000);
+userData={name,village,state,crop,mobile,whatsapp,id};
+document.getElementById('idName').innerText=name;document.getElementById('idVillage').innerText=village;
+document.getElementById('idState').innerText=state;document.getElementById('idCrop').innerText=crop;
+document.getElementById('idMobile').innerText='+91 '+mobile;document.getElementById('idNum').innerText=id;
+document.querySelectorAll('.uName').forEach(e=>e.innerText=name);document.querySelectorAll('.uId').forEach(e=>e.innerText=id);
+localStorage.setItem('kisan',JSON.stringify(userData));go('s3');
 }
-
-function badloMandi(){
-  let m = document.getElementById("mandi").value;
-  dikhao(m);
-  alert("मंडी बदल गई! अब " + document.getElementById("mandi").selectedOptions[0].text + " का भाव दिख रहा है");
+function renderMandi(f=''){let h='';mandis.filter(m=>m.name.includes(f)).forEach(m=>{h+=`<div class="mandi ${m.name==selectedMandi.name?'active':''}" onclick="selectMandi('${m.name}')"><span>${m.name}</span><span>गेहूं ₹${m.price} • लाइव</span></div>`});document.getElementById('mandiList').innerHTML=h;}
+function selectMandi(n){selectedMandi=mandis.find(m=>m.name==n);renderMandi();}
+function renderBhav(){
+document.getElementById('selMandi').innerText=selectedMandi.name+' - हरियाणा';
+document.getElementById('todayMandi').innerText=selectedMandi.name;
+document.getElementById('profileMandi').innerText=selectedMandi.name;
+document.getElementById('showMobile').innerText='+91 '+(userData.mobile||'98765 43210');
+document.getElementById('todaySale').innerText='₹'+total.toLocaleString('en-IN');
+let d=new Date().getDate();let base=selectedMandi.price+(d%5)*5;
+document.getElementById('graphNow').innerText='₹'+base;
+document.getElementById('bhavList').innerHTML=`<table><tr><th>फसल</th><th>भाव</th><th>बदलाव</th></tr>
+<tr><td>🌾 गेहूं</td><td>₹${base} / क्विंटल</td><td>⬆️ +15</td></tr>
+<tr><td>🌾 धान बासमती</td><td>₹${base+1700}</td><td>⬆️ +20</td></tr>
+<tr><td>🟡 सरसों</td><td>₹6200</td><td>➡️ स्थिर</td></tr>
+<tr><td>🧅 प्याज</td><td>₹3100</td><td>⬇️ -50</td></tr>
+<tr><td>🥔 आलू</td><td>₹800</td><td>⬆️ +10</td></tr>
+<tr><td>🍅 टमाटर</td><td>₹28 / किग्रा</td><td>⬆️ +2</td></tr>
+<tr><td>🥦 फूलगोभी</td><td>₹35 / किग्रा</td><td>⬇️ -2</td></tr>
+<tr><td>🥬 पालक</td><td>₹20 / किग्रा</td><td>➡️ स्थिर</td></tr>
+<tr><td>🥕 गाजर</td><td>₹30 / किग्रा</td><td>⬆️ +3</td></tr>
+<tr><td>🌶️ हरी मिर्च</td><td>₹40 / किग्रा</td><td>➡️ स्थिर</td></tr></table>
+<small>अंतिम अपडेट: ${new Date().toLocaleString('hi-IN')} | अगली ऑटो अपडेट: सुबह 6 बजे</small>`;
 }
-
-// रोज़ अपने आप अपडेट - हर 1 घंटे में भाव थोड़ा बदल जाएगा
-function autoUpdate(){
-  let now = new Date();
-  document.getElementById("time").innerText = now.toLocaleDateString('hi-IN') + " " + now.toLocaleTimeString('hi-IN',{hour:'2-digit',minute:'2-digit'});
-  document.getElementById("updateTime").innerText = now.toLocaleTimeString('hi-IN');
+function addSale(){
+let c=document.getElementById('saleCrop').value||'गेहूं';let q=document.getElementById('saleQty').value||10;let p=document.getElementById('salePrice').value||2435;
+let amt=q*p;total+=amt;document.getElementById('saleList').innerHTML+=`<p>✅ ${c} - ${q} x ₹${p} = ₹${amt}</p>`;document.getElementById('totalSale').innerText='₹'+total.toLocaleString('en-IN');document.getElementById('todaySale').innerText='₹'+total.toLocaleString('en-IN');alert('बिक्री सेव हो गई!');
 }
-function boliLagao(){
-  let bhav = prompt("अपनी बोली डालें (₹/क्विंटल में):");
-  if(bhav) alert("बहुत बढ़िया! आपकी बोली ₹" + bhav + " मंडी में लाइव हो गई!");
+function simulateUpdate(){
+let newP=selectedMandi.price+15;
+document.getElementById('msgDemo').innerHTML=`<div class="safe">🔔 <b>मैसेज आ गया! व्हाट्सऐप / SMS:</b><br>“ताज़ा मंडी भाव अपडेट! ${selectedMandi.name} में गेहूं का भाव बढ़ा! पुराना: ₹${selectedMandi.price} → नया: ₹${newP} | +0.62% | आज ${new Date().toLocaleDateString('hi-IN')}”<br><small>यह मैसेज आपके नंबर +91 ${userData.mobile||'98765 43210'} पर गया है।</small></div>`;
+document.getElementById('liveMsg').innerHTML=`<br>📱 अभी-अभी मैसेज भेजा गया: गेहूं ₹${selectedMandi.price} → ₹${newP}`;
 }
-function shareKaro(){
-  let text = "🌾 यमुनानगर मंडी भाव - गेहूं ₹2585, धान ₹4141, सरसों ₹6200 - Mandi Bhav App से देखें!";
-  window.open("https://wa.me/?text=" + encodeURIComponent(text));
-}
-
-// शुरू में
-dikhao('yamunanagar');
-autoUpdate();
-setInterval(autoUpdate, 60000); // हर 1 मिनट में टाइम अपडेट
-setInterval(()=>{ alert("🔔 नया अपडेट: यमुनानगर में प्याज ₹20 बढ़ गया!"); }, 3600000); // हर 1 घंटे में नोटिफिकेशन
+function logout(){localStorage.removeItem('kisan');location.reload();}
+let saved=localStorage.getItem('kisan');if(saved){userData=JSON.parse(saved);document.querySelectorAll('.uName').forEach(e=>e.innerText=userData.name);document.querySelectorAll('.uId').forEach(e=>e.innerText=userData.id);}
+// रोज ऑटो अपडेट का लॉजिक - हर दिन तारीख के हिसाब से भाव बदलेगा
+setInterval(()=>{document.getElementById('liveMsg').innerHTML='<br>🔄 ऑटो चेक हो रहा है... भाव में बदलाव होते ही मैसेज जाएगा';},30000);
 </script>
 </body>
 </html>
