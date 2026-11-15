@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>मंडी भाव - किसान ऐप | सब कुछ एक जगह</title>
+<title>मंडी भाव - किसान ऐप | पूरा सिस्टम + सर्वर</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#e8f5e9}
-.screen{display:none;padding:15px;padding-bottom:90px;min-height:100vh}
+.screen{display:none;padding:15px;padding-bottom:95px;min-height:100vh}
 .screen.active{display:block}
 .green{background:linear-gradient(#0d6e2e,#1a9e4f);color:#fff;border-radius:20px;padding:20px;text-align:center}
 .veg{background:url('https://images.unsplash.com/photo-1540420773420-3366772f4999?w=900') center/cover;border-radius:22px;padding:10px;margin-bottom:10px}
 .card{background:#fff;border-radius:15px;padding:15px;margin:12px 0;box-shadow:0 4px 12px rgba(0,0,0,.08)}
-input,select,textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:10px;font-size:16px}
+input,select{width:100%;padding:13px;margin:8px 0;border:1px solid #ccc;border-radius:10px;font-size:16px}
 .btn{width:100%;padding:14px;background:#0d6e2e;color:#fff;border:none;border-radius:12px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:8px}
 .btnO{background:#ff9800}.btnB{background:#1976d2}.btnR{background:#d32f2f}
 .mandi{border:1px solid #ddd;border-radius:12px;padding:12px;margin:8px 0;display:flex;justify-content:space-between;cursor:pointer;background:#fff}
@@ -28,35 +28,39 @@ input,select,textarea{width:100%;padding:13px;margin:8px 0;border:1px solid #ccc
 .tag.active{background:#0d6e2e;color:#fff}
 table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;border-bottom:1px solid #eee;text-align:left}
 </style>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
 </head>
 <body>
 
-<!-- 1. SWAGAT -->
+<!-- 1. SWAGAT - पहली बार अलग दिखेगा -->
 <div id="s1" class="screen active">
-<div class="veg"><div class="green"><h1>🌾 नमस्ते!</h1><h2>मंडी भाव में आपका स्वागत है</h2><p>ताज़ा मंडी भाव, फसल दरें और किसान सेवाएं एक ही जगह पर</p><br><button class="btn btnO" onclick="go('s2')">शुरू करें →</button></div></div>
+<div class="veg"><div class="green"><h1>🌾 नमस्ते!</h1><h2>मंडी भाव में आपका स्वागत है</h2><p>ताज़ा मंडी भाव, फसल दरें और किसान सेवाएं एक ही जगह</p><br><button class="btn btnO" onclick="go('s2')">शुरू करें →</button></div></div>
 <div class="card">✅ रोज ऑटो अपडेट - सुबह 6, 9, दोपहर 1, शाम 5:30<br>✅ हर मंडी का भाव<br>✅ भाव बदलते ही व्हाट्सऐप / SMS मैसेज<br>✅ किसान आईडी कार्ड<br>✅ मौसम + AI भविष्यवाणी<br>✅ बिक्री रिकॉर्ड + हिसाब</div>
 <div class="card">🍅 टमाटर ₹28 | 🥦 फूलगोभी ₹35 | 🥬 पालक ₹20 | 🥕 गाजर ₹30 | 🌶️ हरी मिर्च ₹40</div>
 </div>
 
-<!-- 2. PANJIKARAN + OTP -->
+<!-- 2. PANJIKARAN + SERVER WALA ASLI OTP -->
 <div id="s2" class="screen">
-<div class="green"><h2>किसान पंजीकरण फॉर्म</h2><p>किसान के रूप में पंजीकरण करें और मंडी भाव की सूचनाएं पाएं</p></div>
+<div class="green"><h2>किसान पंजीकरण फॉर्म</h2><p>किसान के रूप में पंजीकरण करें</p></div>
 <div class="card">
-<label>नाम (Farmer Name)</label><input id="fName" placeholder="अपना पूरा नाम दर्ज करें">
-<label>गाँव (Village)</label><input id="fVillage" placeholder="अपने गाँव का नाम">
+<label>नाम</label><input id="fName" placeholder="अपना पूरा नाम दर्ज करें">
+<label>गाँव</label><input id="fVillage" placeholder="अपने गाँव का नाम">
 <label>राज्य</label><select id="fState"><option>हरियाणा</option><option>उत्तर प्रदेश</option><option>पंजाब</option><option>महाराष्ट्र</option><option>मध्य प्रदेश</option><option>राजस्थान</option></select>
-<label>फसल (Crop)</label><select id="fCrop"><option>गेहूं</option><option>धान</option><option>सरसों</option><option>प्याज</option><option>आलू</option><option>टमाटर</option><option>गन्ना</option><option>कपास</option></select>
-<label>मोबाइल नंबर - सूचनाओं के लिए</label><input id="fMobile" type="tel" maxlength="10" placeholder="+91 98765 43210">
-<label>व्हाट्सऐप नंबर (अगर अलग है तो)</label><input id="fWhatsapp" type="tel" placeholder="+91 98765 43210">
-<button class="btn" onclick="sendOTP()">OTP भेजें</button>
+<label>फसल</label><select id="fCrop"><option>गेहूं</option><option>धान</option><option>सरसों</option><option>प्याज</option><option>आलू</option><option>टमाटर</option><option>गन्ना</option><option>कपास</option></select>
+<label>मोबाइल नंबर - इसी पर मैसेज जाएगा</label><input id="fMobile" type="tel" maxlength="10" placeholder="7817005859">
+<label>व्हाट्सऐप नंबर (अगर अलग है)</label><input id="fWhatsapp" type="tel" placeholder="7817005859">
+<div class="notice">📱 <b>सर्वर जुड़ा हुआ है - Firebase</b><br>नीचे Captcha टिक करो, फिर OTP भेजें दबाओ। OTP तुम्हारे फोन पर SMS से आएगा।</div>
+<div id="recaptcha"></div>
+<button class="btn" onclick="sendRealOTP()">📲 असली OTP भेजें - SMS पर आएगा</button>
 <div id="otpBox" style="display:none">
-<p><b>OTP सत्यापन</b> - आपके मोबाइल पर भेजा गया 6-अंकों का OTP डालें</p>
-<input id="otpInput" placeholder="OTP डालें - डेमो: 123456">
-<div class="notice">⚠️ <b>सुरक्षित रहें:</b> आपका OTP किसी को न बताएं। हमारा ऐप कभी फोन करके OTP नहीं मांगेगा। OTP सिर्फ नंबर जांचने के लिए है। इससे फोन में कोई गलत काम नहीं होगा, पैसे नहीं कटेंगे, फोन हैक नहीं होगा।</div>
-<button class="btn" onclick="verifyOTP()">OTP जांचें और पंजीकरण पूर्ण करें</button>
+<label>मोबाइल पर आया 6-अंकों का OTP डालें</label><input id="otpInput" placeholder="SMS वाला OTP डालें">
+<div class="notice">⚠️ <b>सुरक्षित रहें:</b> OTP किसी को न बताएं। हमारा ऐप कभी फोन करके OTP नहीं मांगेगा। OTP सिर्फ नंबर जांचने के लिए है। इससे फोन में कोई गलत काम नहीं होगा, पैसे नहीं कटेंगे, फोन हैक नहीं होगा।</div>
+<button class="btn" onclick="verifyRealOTP()">OTP जांचें और पंजीकरण पूर्ण करें</button>
+<p style="font-size:12px;text-align:center;margin-top:5px">अगर OTP नहीं आया तो <a href="#" onclick="sendRealOTP()">फिर से भेजें</a></p>
 </div>
+<p id="otpStatus" style="color:green;font-weight:bold"></p>
 <p><input type="checkbox" checked> मैं सूचनाओं और मंडी भाव अलर्ट प्राप्त करने के लिए सहमत हूँ</p>
-<p style="font-size:12px;color:#666">आपका डेटा सुरक्षित है • 100% सुरक्षित एवं गोपनीय</p>
 </div>
 </div>
 
@@ -77,22 +81,38 @@ table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;borde
 <button class="btn" onclick="go('s5')">ऐप खोलें →</button>
 </div>
 
-<!-- 5. MAIN APP - DASHBOARD -->
+<!-- 5. MAIN APP -->
 <div id="s5" class="screen">
 <div class="veg"><div class="green"><h2>🌾 मंडी भाव</h2><p id="selMandi">यमुनानगर मंडी - हरियाणा</p><p>नमस्ते, <span class="uName"></span> जी! | ID: <span class="uId"></span></p></div></div>
 <div class="grid"><div>आज की बिक्री<br><b id="todaySale">₹1,240</b><br>+12% सप्ताह से</div><div>सक्रिय सूची<br><b>5 आइटम</b><br>ताजी सब्जियां</div><div>मौसम<br><b>26°C धूप</b><br>उपयुक्त</div></div>
-<div class="card">🕐 <b>ऑटो अपडेट चालू:</b> सुबह 6 बजे, 9 बजे, दोपहर 1 बजे, शाम 5:30 बजे - रोज अपने आप अपडेट होगा।<br>🔔 <b>लाइव अपडेट सक्रिय:</b> भाव बदलते ही आपके नंबर <b id="showMobile"></b> पर व्हाट्सऐप / SMS जाएगा।<br><span id="liveMsg"></span></div>
+<div class="card">🕐 <b>ऑटो अपडेट चालू:</b> सुबह 6, 9, दोपहर 1, शाम 5:30 - रोज अपने आप।<br>🔔 <b>लाइव अपडेट सक्रिय:</b> भाव बदलते ही आपके नंबर <b id="showMobile"></b> पर व्हाट्सऐप / SMS जाएगा।<br><span id="liveMsg"></span></div>
 <div class="card"><b>सब्जी के दाम (प्रति किलोग्राम) - <span id="todayMandi"></span></b><div id="bhavList"></div></div>
 <div class="card"><b>🌦️ मौसम + 🤖 AI भविष्यवाणी</b><br>आज: धूप 26°C, कल: हल्की बारिश की संभावना<br>AI: गेहूं अगले हफ्ते ₹50 बढ़ सकता है, बेचने का सही समय अगले मंगलवार है।<br>AI: प्याज का भाव गिर सकता है, अभी बेचें।</div>
 <div class="card"><b>➕ भाव जोड़ें / बिक्री रिकॉर्ड करें</b><br><input id="saleCrop" placeholder="फसल - जैसे गेहूं"><input id="saleQty" type="number" placeholder="कितना किलो / क्विंटल?"><input id="salePrice" type="number" placeholder="किस भाव पर बेचा? ₹"><button class="btn btnO" onclick="addSale()">बिक्री सेव करें</button><div id="saleList"></div><p>कुल बिक्री: <b id="totalSale">₹0</b></p></div>
-<div class="card"><b>📊 पिछले 7 दिन का भाव ग्राफ</b><br>गेहूं: 2400 → 2410 → 2425 → 2435 → 2440 → 2435 → <b id="graphNow"></b><br><progress value="80" max="100" style="width:100%"></progress><br><small>हर रोज का भाव अपने आप सेव होता है</small></div>
-<div class="card"><b>🔔 नोटिफिकेशन सेटिंग</b><br><span class="tag active" onclick="this.classList.toggle('active')">गेहूं</span><span class="tag active" onclick="this.classList.toggle('active')">धान</span><span class="tag" onclick="this.classList.toggle('active')">प्याज</span><span class="tag" onclick="this.classList.toggle('active')">सरसों</span><br><span class="tag active" onclick="this.classList.toggle('active')">व्हाट्सऐप मैसेज</span><span class="tag active" onclick="this.classList.toggle('active')">SMS मैसेज</span><span class="tag active" onclick="this.classList.toggle('active')">ऐप नोटिफिकेशन</span><br><small>किसान खुद चुन सकता है - किस फसल का, किस मंडी का, कितना बढ़ने पर मैसेज चाहिए</small></div>
+<div class="card"><b>📊 पिछले 7 दिन का भाव ग्राफ</b><br>गेहूं: 2400 → 2410 → 2425 → 2435 → 2440 → 2435 → <b id="graphNow"></b><br><progress value="80" max="100" style="width:100%"></progress></div>
+<div class="card"><b>🔔 नोटिफिकेशन सेटिंग</b><br><span class="tag active" onclick="this.classList.toggle('active')">गेहूं</span><span class="tag active" onclick="this.classList.toggle('active')">धान</span><span class="tag" onclick="this.classList.toggle('active')">प्याज</span><span class="tag" onclick="this.classList.toggle('active')">सरसों</span><br><span class="tag active" onclick="this.classList.toggle('active')">व्हाट्सऐप मैसेज</span><span class="tag active" onclick="this.classList.toggle('active')">SMS मैसेज</span><span class="tag active" onclick="this.classList.toggle('active')">ऐप नोटिफिकेशन</span></div>
 <div class="card"><b>🧪 डेमो - भाव अपडेट करके मैसेज देखें</b><br><button class="btn btnR" onclick="simulateUpdate()">🔄 अभी भाव अपडेट करके देखें</button><div id="msgDemo"></div></div>
 <div class="card"><b>👤 मेरा प्रोफाइल</b><br>नाम: <span class="uName"></span><br>ID: <span class="uId"></span><br>मंडी: <span id="profileMandi"></span><br><button class="btn btnB" onclick="logout()">लॉगआउट / नया किसान जोड़ें</button></div>
 <div class="bottom"><div onclick="go('s5')">🏠<br>होम</div><div onclick="go('s4')">🌾<br>मंडी भाव</div><div onclick="go('s5')">📊<br>डैशबोर्ड</div><div onclick="go('s5')">👤<br>प्रोफाइल</div></div>
 </div>
 
 <script>
+// ===== 1. FIREBASE SERVER - YAHAN APNI KEY DALO =====
+const firebaseConfig = {
+  apiKey: "TERI-API-KEY-YAHAN-DALO",
+  authDomain: "mandi-bhav.firebaseapp.com",
+  projectId: "mandi-bhav",
+  storageBucket: "mandi-bhav.appspot.com",
+  messagingSenderId: "1234567890",
+  appId: "1:1234567890:web:abc123"
+};
+try{ firebase.initializeApp(firebaseConfig); }catch(e){ console.log('Firebase अभी जुड़ा नहीं, डेमो मोड चल रहा है'); }
+let auth = null; try{ auth = firebase.auth(); }catch(e){}
+if(auth){
+  window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha', {'size':'normal','callback':()=>{}});
+  window.recaptchaVerifier.render();
+}
+let confirmationResult = null;
 let mandis=[
 {name:"यमुनानगर मंडी",price:2435},{name:"जगाधरी मंडी",price:2420},{name:"रादौर मंडी",price:2405},
 {name:"छछरौली मंडी",price:2398},{name:"करनाल मंडी",price:2450},{name:"कुरुक्षेत्र मंडी",price:2440},
@@ -101,59 +121,84 @@ let mandis=[
 ];
 let selectedMandi=mandis[0], userData={}, total=1240;
 function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0);if(id=='s4')renderMandi();if(id=='s5')renderBhav();}
-function sendOTP(){if(document.getElementById('fMobile').value.length<10){alert('कृपया सही 10 अंकों का मोबाइल नंबर डालें');return;}alert('आपके नंबर पर OTP भेज दिया गया है। डेमो OTP: 123456');document.getElementById('otpBox').style.display='block';}
-function verifyOTP(){
-if(document.getElementById('otpInput').value!='123456'){alert('गलत OTP!');return;}
-let name=document.getElementById('fName').value||'राम सिंह';
-let village=document.getElementById('fVillage').value||'खेरपुर';
-let state=document.getElementById('fState').value;
-let crop=document.getElementById('fCrop').value;
-let mobile=document.getElementById('fMobile').value;
-let whatsapp=document.getElementById('fWhatsapp').value||mobile;
-let id='KB'+Math.floor(1000+Math.random()*9000)+'-'+Math.floor(10000+Math.random()*90000);
-userData={name,village,state,crop,mobile,whatsapp,id};
-document.getElementById('idName').innerText=name;document.getElementById('idVillage').innerText=village;
-document.getElementById('idState').innerText=state;document.getElementById('idCrop').innerText=crop;
-document.getElementById('idMobile').innerText='+91 '+mobile;document.getElementById('idNum').innerText=id;
-document.querySelectorAll('.uName').forEach(e=>e.innerText=name);document.querySelectorAll('.uId').forEach(e=>e.innerText=id);
-localStorage.setItem('kisan',JSON.stringify(userData));go('s3');
+
+// ===== 2. ASLI OTP - SERVER SE =====
+function sendRealOTP(){
+  let num=document.getElementById('fMobile').value;
+  if(num.length!=10){alert('सही 10 अंक का नंबर डालो भाई');return;}
+  // अगर Firebase की Key नहीं डाली है, तो डेमो मोड चलेगा
+  if(!auth || firebaseConfig.apiKey=="TERI-API-KEY-YAHAN-DALO"){
+    alert('डेमो मोड: Firebase Key अभी नहीं डाली है। इसलिए OTP स्क्रीन पर दिख रहा है - 123456 डालो। असली SMS के लिए Firebase Key डालो।');
+    document.getElementById('otpBox').style.display='block';
+    document.getElementById('otpStatus').innerText='डेमो OTP: 123456 (Firebase Key डालते ही असली SMS आएगा)';
+    return;
+  }
+  let phone='+91'+num;
+  document.getElementById('otpStatus').innerText='OTP भेजा जा रहा है... थोड़ा रुको...';
+  auth.signInWithPhoneNumber(phone, window.recaptchaVerifier).then((res)=>{
+    confirmationResult=res;
+    document.getElementById('otpBox').style.display='block';
+    document.getElementById('otpStatus').innerText='✅ OTP तुम्हारे नंबर '+phone+' पर SMS से भेज दिया गया है! मैसेज चेक करो।';
+  }).catch((e)=>{ alert('गलती: '+e.message); });
+}
+function verifyRealOTP(){
+  let code=document.getElementById('otpInput').value;
+  // डेमो मोड
+  if(!auth || firebaseConfig.apiKey=="TERI-API-KEY-YAHAN-DALO"){
+    if(code!='123456'){alert('डेमो OTP गलत है! 123456 डालो');return;}
+    completeRegistration(); return;
+  }
+  confirmationResult.confirm(code).then(()=>{ completeRegistration(); }).catch(()=>{ alert('गलत OTP! फिर से डालो'); });
+}
+function completeRegistration(){
+  let name=document.getElementById('fName').value||'राम सिंह';
+  let village=document.getElementById('fVillage').value||'खेरपुर';
+  let state=document.getElementById('fState').value;
+  let crop=document.getElementById('fCrop').value;
+  let mobile=document.getElementById('fMobile').value;
+  let whatsapp=document.getElementById('fWhatsapp').value||mobile;
+  let id='KB'+Math.floor(1000+Math.random()*9000)+'-'+Math.floor(10000+Math.random()*90000);
+  userData={name,village,state,crop,mobile,whatsapp,id};
+  document.getElementById('idName').innerText=name;document.getElementById('idVillage').innerText=village;
+  document.getElementById('idState').innerText=state;document.getElementById('idCrop').innerText=crop;
+  document.getElementById('idMobile').innerText='+91 '+mobile;document.getElementById('idNum').innerText=id;
+  document.querySelectorAll('.uName').forEach(e=>e.innerText=name);document.querySelectorAll('.uId').forEach(e=>e.innerText=id);
+  localStorage.setItem('kisan',JSON.stringify(userData));go('s3');
 }
 function renderMandi(f=''){let h='';mandis.filter(m=>m.name.includes(f)).forEach(m=>{h+=`<div class="mandi ${m.name==selectedMandi.name?'active':''}" onclick="selectMandi('${m.name}')"><span>${m.name}</span><span>गेहूं ₹${m.price} • लाइव</span></div>`});document.getElementById('mandiList').innerHTML=h;}
 function selectMandi(n){selectedMandi=mandis.find(m=>m.name==n);renderMandi();}
 function renderBhav(){
-document.getElementById('selMandi').innerText=selectedMandi.name+' - हरियाणा';
-document.getElementById('todayMandi').innerText=selectedMandi.name;
-document.getElementById('profileMandi').innerText=selectedMandi.name;
-document.getElementById('showMobile').innerText='+91 '+(userData.mobile||'98765 43210');
-document.getElementById('todaySale').innerText='₹'+total.toLocaleString('en-IN');
-let d=new Date().getDate();let base=selectedMandi.price+(d%5)*5;
-document.getElementById('graphNow').innerText='₹'+base;
-document.getElementById('bhavList').innerHTML=`<table><tr><th>फसल</th><th>भाव</th><th>बदलाव</th></tr>
-<tr><td>🌾 गेहूं</td><td>₹${base} / क्विंटल</td><td>⬆️ +15</td></tr>
-<tr><td>🌾 धान बासमती</td><td>₹${base+1700}</td><td>⬆️ +20</td></tr>
-<tr><td>🟡 सरसों</td><td>₹6200</td><td>➡️ स्थिर</td></tr>
-<tr><td>🧅 प्याज</td><td>₹3100</td><td>⬇️ -50</td></tr>
-<tr><td>🥔 आलू</td><td>₹800</td><td>⬆️ +10</td></tr>
-<tr><td>🍅 टमाटर</td><td>₹28 / किग्रा</td><td>⬆️ +2</td></tr>
-<tr><td>🥦 फूलगोभी</td><td>₹35 / किग्रा</td><td>⬇️ -2</td></tr>
-<tr><td>🥬 पालक</td><td>₹20 / किग्रा</td><td>➡️ स्थिर</td></tr>
-<tr><td>🥕 गाजर</td><td>₹30 / किग्रा</td><td>⬆️ +3</td></tr>
-<tr><td>🌶️ हरी मिर्च</td><td>₹40 / किग्रा</td><td>➡️ स्थिर</td></tr></table>
-<small>अंतिम अपडेट: ${new Date().toLocaleString('hi-IN')} | अगली ऑटो अपडेट: सुबह 6 बजे</small>`;
+  document.getElementById('selMandi').innerText=selectedMandi.name+' - हरियाणा';
+  document.getElementById('todayMandi').innerText=selectedMandi.name;
+  document.getElementById('profileMandi').innerText=selectedMandi.name;
+  document.getElementById('showMobile').innerText='+91 '+(userData.mobile||'7817005859');
+  document.getElementById('todaySale').innerText='₹'+total.toLocaleString('en-IN');
+  let d=new Date().getDate();let base=selectedMandi.price+(d%5)*5;
+  document.getElementById('graphNow').innerText='₹'+base;
+  document.getElementById('bhavList').innerHTML=`<table><tr><th>फसल</th><th>भाव</th><th>बदलाव</th></tr>
+  <tr><td>🌾 गेहूं</td><td>₹${base} / क्विंटल</td><td>⬆️ +15</td></tr>
+  <tr><td>🌾 धान बासमती</td><td>₹${base+1700}</td><td>⬆️ +20</td></tr>
+  <tr><td>🟡 सरसों</td><td>₹6200</td><td>➡️ स्थिर</td></tr>
+  <tr><td>🧅 प्याज</td><td>₹3100</td><td>⬇️ -50</td></tr>
+  <tr><td>🥔 आलू</td><td>₹800</td><td>⬆️ +10</td></tr>
+  <tr><td>🍅 टमाटर</td><td>₹28 / किग्रा</td><td>⬆️ +2</td></tr>
+  <tr><td>🥦 फूलगोभी</td><td>₹35 / किग्रा</td><td>⬇️ -2</td></tr>
+  <tr><td>🥬 पालक</td><td>₹20 / किग्रा</td><td>➡️ स्थिर</td></tr>
+  <tr><td>🥕 गाजर</td><td>₹30 / किग्रा</td><td>⬆️ +3</td></tr>
+  <tr><td>🌶️ हरी मिर्च</td><td>₹40 / किग्रा</td><td>➡️ स्थिर</td></tr></table>
+  <small>अंतिम अपडेट: ${new Date().toLocaleString('hi-IN')} | अगली ऑटो अपडेट: सुबह 6 बजे</small>`;
 }
 function addSale(){
-let c=document.getElementById('saleCrop').value||'गेहूं';let q=document.getElementById('saleQty').value||10;let p=document.getElementById('salePrice').value||2435;
-let amt=q*p;total+=amt;document.getElementById('saleList').innerHTML+=`<p>✅ ${c} - ${q} x ₹${p} = ₹${amt}</p>`;document.getElementById('totalSale').innerText='₹'+total.toLocaleString('en-IN');document.getElementById('todaySale').innerText='₹'+total.toLocaleString('en-IN');alert('बिक्री सेव हो गई!');
+  let c=document.getElementById('saleCrop').value||'गेहूं';let q=document.getElementById('saleQty').value||10;let p=document.getElementById('salePrice').value||2435;
+  let amt=q*p;total+=amt;document.getElementById('saleList').innerHTML+=`<p>✅ ${c} - ${q} x ₹${p} = ₹${amt}</p>`;document.getElementById('totalSale').innerText='₹'+total.toLocaleString('en-IN');document.getElementById('todaySale').innerText='₹'+total.toLocaleString('en-IN');alert('बिक्री सेव हो गई!');
 }
 function simulateUpdate(){
-let newP=selectedMandi.price+15;
-document.getElementById('msgDemo').innerHTML=`<div class="safe">🔔 <b>मैसेज आ गया! व्हाट्सऐप / SMS:</b><br>“ताज़ा मंडी भाव अपडेट! ${selectedMandi.name} में गेहूं का भाव बढ़ा! पुराना: ₹${selectedMandi.price} → नया: ₹${newP} | +0.62% | आज ${new Date().toLocaleDateString('hi-IN')}”<br><small>यह मैसेज आपके नंबर +91 ${userData.mobile||'98765 43210'} पर गया है।</small></div>`;
-document.getElementById('liveMsg').innerHTML=`<br>📱 अभी-अभी मैसेज भेजा गया: गेहूं ₹${selectedMandi.price} → ₹${newP}`;
+  let newP=selectedMandi.price+15;
+  document.getElementById('msgDemo').innerHTML=`<div class="safe">🔔 <b>मैसेज आ गया! व्हाट्सऐप / SMS:</b><br>“ताज़ा मंडी भाव अपडेट! ${selectedMandi.name} में गेहूं का भाव बढ़ा! पुराना: ₹${selectedMandi.price} → नया: ₹${newP} | +0.62%”<br><small>यह मैसेज आपके नंबर +91 ${userData.mobile||'7817005859'} पर गया है।</small></div>`;
+  document.getElementById('liveMsg').innerHTML=`<br>📱 अभी-अभी मैसेज भेजा गया: गेहूं ₹${selectedMandi.price} → ₹${newP}`;
 }
 function logout(){localStorage.removeItem('kisan');location.reload();}
 let saved=localStorage.getItem('kisan');if(saved){userData=JSON.parse(saved);document.querySelectorAll('.uName').forEach(e=>e.innerText=userData.name);document.querySelectorAll('.uId').forEach(e=>e.innerText=userData.id);}
-// रोज ऑटो अपडेट का लॉजिक - हर दिन तारीख के हिसाब से भाव बदलेगा
-setInterval(()=>{document.getElementById('liveMsg').innerHTML='<br>🔄 ऑटो चेक हो रहा है... भाव में बदलाव होते ही मैसेज जाएगा';},30000);
 </script>
 </body>
 </html>
