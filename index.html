@@ -1,52 +1,282 @@
-<!-- REELS - UPAR HI WHATSAPP NUMBER -->
-<div id="page_reels" class="screen">
-<div class="back" onclick="go('page_home')">← वापस होम</div>
-<div class="top"><h1>🌾 किसान Reels</h1><p>कृषि वीडियो • सीखें, साझा करें</p></div>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amandeep Krishi Seva Kendra - Behat | Mandi Bhav</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#F1F8E9;padding-bottom:85px}
+.top{background:#2E7D32;color:#fff;padding:18px;border-radius:0 0 20px 20px;text-align:center}
+.top h1{font-size:22px}
+.top p{font-size:13px;margin-top:4px;line-height:1.4}
+.micBtn{background:#7B1FA2;color:#fff;border:none;padding:14px;border-radius:12px;width:100%;font-weight:bold;font-size:17px;margin-top:12px}
+.card{background:#fff;margin:12px;padding:14px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.greenCard{background:#2E7D32;color:#fff;margin:12px;padding:18px;border-radius:16px}
+.greenCard h2{font-size:20px}
+.greenCard .price{font-size:42px;font-weight:900;margin:6px 0}
+.blueCard{background:#D6EAF8;margin:12px;padding:16px;border-radius:16px;line-height:1.6;font-size:15px}
+.btn{background:#2E7D32;color:#fff;border:none;padding:12px;border-radius:10px;width:100%;font-weight:bold;margin-top:8px;font-size:15px}
+.btnW{background:#25D366}
+.btnO{background:#FF6D00}
+.btnP{background:#7B1FA2}
+input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin-top:8px;font-size:15px}
+.back{padding:12px;font-weight:bold;color:#2E7D32;cursor:pointer}
+.screen{display:none}
+.screen.active{display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px}
+.gcard{background:#fff;padding:16px;border-radius:14px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.08);cursor:pointer}
+.gcard b{font-size:15px}
+.gcard span{font-size:28px}
+.shop{background:#E8F5E9;border:1px solid #00C853;padding:12px;border-radius:10px;margin-top:8px}
+.waBox{background:#25D366;padding:12px;border-radius:12px;color:#fff;text-align:center;margin:12px}
+.waBox button{background:#fff;color:#25D366;border:none;padding:10px;border-radius:20px;font-weight:bold;width:100%;margin-top:8px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-around;padding:10px 0 6px;border-top:1px solid #ddd;z-index:998}
+.bottom div{text-align:center;font-size:12px;color:#666;cursor:pointer;line-height:1.2}
+.bottom div.active{color:#2E7D32;font-weight:bold}
+.mandiItem{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #eee}
+.mandiItem:last-child{border:none}
+</style>
+</head>
+<body>
 
-<!-- ✅ ISI PER WHATSAPP - UPAR HI -->
-<div style="background:#25D366;padding:12px;border-radius:12px;color:#fff;text-align:center;margin:10px">
+<!-- ============ PAGE 1 - HOME - PEHLE WALA ============ -->
+<div id="page_home" class="screen active">
+<div class="top">
+<h1>🌾 Amandeep Krishi Seva Kendra</h1>
+<p>📍 Behat, Saharanpur | 📞 7817005859</p>
+<p>Namaste Kisan Bhai! 🙏 Aaj kya chahiye?</p>
+<p>📍 मुज़फ़्फ़रनगर मंडी | नमस्ते, Narayan Saini जी! | ID: KB8203-90349</p>
+<button class="micBtn" onclick="speakBhav()">🎤 बोलकर भाव सुनें</button>
+</div>
+
+<div class="waBox">
 <b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>
 📞 WhatsApp: <b>7817005859</b><br>
-<button onclick="window.location.href='https://wa.me/917817005859?text=Namaste! Mujhe dava chahiye'" style="background:#fff;color:#25D366;border:none;padding:10px 20px;border-radius:20px;font-weight:bold;margin-top:8px;width:100%">💬 WhatsApp पर मैसेज करें</button>
-<button onclick="window.location.href='tel:7817005859'" style="background:#000;color:#fff;border:none;padding:10px 20px;border-radius:20px;font-weight:bold;margin-top:6px;width:100%">📞 कॉल करें - 7817005859</button>
+<span style="font-size:12px">💬 Message isi number per aayega</span>
+<button onclick="window.location.href='https://wa.me/917817005859?text=Namaste! Mujhe dava chahiye'">💬 WhatsApp per Message Karo</button>
+<button onclick="window.location.href='tel:7817005859'" style="background:#000;color:#fff">📞 Call Karo - 7817005859</button>
 </div>
 
-<!-- Reel 1 -->
-<div class="card" style="padding:0;overflow:hidden">
-<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800" style="width:100%;height:280px;object-fit:cover">
-<div style="padding:12px">
-<b>🌾 गेहूं की अच्छी पैदावार के टिप्स</b><br>
-👨‍🌾 राम सिंह - बेहट<br>
-❤️ 12.5K • 👁️ 45K<br>
-<button class="btn" onclick="alert('रील को लाइक कर दिया!')">❤️ लाइक करें</button>
-<button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Ye Reel dekhi, dava chahiye'">💬 WhatsApp - 7817005859</button>
-</div>
+<div class="greenCard">
+<h2>🌾 गेहूं का भाव - आज</h2>
+<div class="price">₹2586 / क्विंटल</div>
+<p>⬆️ +32 (+1.25%) आज | अगली अपडेट सुबह 6 बजे</p>
 </div>
 
-<!-- Reel 2 -->
-<div class="card" style="padding:0;overflow:hidden">
-<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800" style="width:100%;height:280px;object-fit:cover">
-<div style="padding:12px">
-<b>🍅 टमाटर की फसल में रोग प्रबंधन</b><br>
-👨‍🌾 रमेश - मुज़फ़्फ़रनगर<br>
-❤️ 9.2K • 👁️ 28K<br>
-<button class="btn" onclick="alert('रील को लाइक कर दिया!')">❤️ लाइक करें</button>
+<div class="blueCard">
+<b>☀️ आज का मौसम - 28°C • साफ धूप</b><br>
+💧 नमी 45% | 🌬️ हवा 12 किमी/घं | अगले 3 दिन: धूप<br>
+🤖 <b>AI सलाह:</b> गेहूं अगले हफ़्ते ₹50 बढ़ सकता है, मंगलवार को बेचो। प्याज अभी बेचो।
+</div>
+
+<div class="grid">
+<div class="gcard" onclick="go('page_dava')"><span>💊</span><br><b>दवा सलाह</b><br><small>Gehu, Tamatar, Ganna</small></div>
+<div class="gcard" onclick="go('page_reels')"><span>🎬</span><br><b>किसान Reels</b><br><small>Real Kisan Video</small></div>
+<div class="gcard" onclick="go('page_mausam')"><span>🌦️</span><br><b>मौसम</b><br><small>Behat ka Mausam</small></div>
+<div class="gcard" onclick="go('page_bazar')"><span>🛒</span><br><b>बाज़ार भाव</b><br><small>Gehu, Dhan, Ganna</small></div>
+<div class="gcard" onclick="go('page_beej')"><span>🌱</span><br><b>बीज - खाद</b><br><small>Sabse Sasta</small></div>
+<div class="gcard" onclick="go('page_msg')"><span>💬</span><br><b>Message Karo</b><br><small>7817005859</small></div>
+<div class="gcard" onclick="go('page_mandi')"><span>🌾</span><br><b>मंडी भाव</b><br><small>Muzaffarnagar</small></div>
+<div class="gcard" onclick="go('page_bech')"><span>📦</span><br><b>बेचें</b><br><small>Apni Fasal Becho</small></div>
+<div class="gcard" onclick="go('page_kharidar')"><span>🧑‍🌾</span><br><b>खरीदार</b><br><small>Kharidar Dekho</small></div>
+<div class="gcard" onclick="go('page_profile')"><span>👤</span><br><b>प्रोफाइल</b><br><small>Narayan Saini</small></div>
+</div>
+
+<div class="card">
+<b>🔥 Aaj ki Top Dava - Behat</b><br><br>
+🌾 <b>Gehu me peela pan?</b> - NPK 19:19:19 + Zinc - ₹450<br>
+🍅 <b>Tamatar me keeda?</b> - Neem Tel + Rogor - ₹250<br>
+🎋 <b>Ganna mota karna hai?</b> - Potash + Urea - ₹380<br>
+<button class="btn" onclick="go('page_dava')">💊 Sab Dava Dekho</button>
+</div>
+
+<div class="card">
+<b>🌾 Aaj ka Bazar Bhav - Behat Mandi</b><br><br>
+🌾 Gehu: ₹2,586 / Quintal ⬆️ +32<br>
+🌾 Dhan: ₹2,203 / Quintal ⬆️<br>
+🎋 Ganna: ₹315 / Quintal ➡️<br>
+<button class="btn btnO" onclick="go('page_bazar')">🛒 Full Bhav Dekho</button>
+</div>
+
+<div class="card">
+<b>👆 कोई भी Option दबाओ, उसका अलग Page खुलेगा 👇</b><br><br>
+<button class="btn" onclick="go('page_mandi')">🌾 मंडी भाव देखो</button>
+<button class="btn btnO" onclick="go('page_bech')">📦 बेचें - अपनी फसल बेचो</button>
+<button class="btn btnP" onclick="go('page_kharidar')">🧑‍🌾 खरीदार देखो</button>
+<button class="btn btnW" onclick="go('page_profile')">👤 प्रोफाइल देखो</button>
+</div>
+
+<div class="card">
+<b>🏪 Hamari Dukaan</b>
+<div class="shop">
+<b>Amandeep Krishi Seva Kendra</b><br>
+📍 Behat, Saharanpur, UP<br>
+📞 <b>7817005859</b><br>
+⏰ Subah 8 - Raat 8 Baje Tak Khula<br>
+✅ Beej - Khad - Dava - Spray - Sab Milega
+</div>
+<button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call - 7817005859</button>
 <button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859'">💬 WhatsApp - 7817005859</button>
 </div>
 </div>
 
-<!-- Reel 3 -->
-<div class="card" style="padding:0;overflow:hidden">
-<img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800" style="width:100%;height:280px;object-fit:cover">
-<div style="padding:12px">
-<b>🚜 ट्रैक्टर से खेती आसान और तेज़</b><br>
-👨‍🌾 गुरप्रीत - सहारनपुर<br>
-❤️ 15.1K • 👁️ 62K<br>
-<button class="btn" onclick="alert('रील को लाइक कर दिया!')">❤️ लाइक करें</button>
-<button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859'">💬 WhatsApp - 7817005859</button>
+<!-- ============ PAGE 2 - MANDI BHAV ============ -->
+<div id="page_mandi" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>🌾 मंडी भाव</h1><p>📍 मुज़फ़्फ़रनगर मंडी | नमस्ते, Narayan Saini जी! | ID: KB8203-90349</p><button class="micBtn" onclick="speakBhav()">🎤 बोलकर भाव सुनें</button></div>
+<div class="greenCard"><h2>🌾 गेहूं का भाव - आज</h2><div class="price">₹2586 / क्विंटल</div><p>⬆️ +32 (+1.25%) आज | अगली अपडेट सुबह 6 बजे</p></div>
+<div class="card">
+<div class="mandiItem"><span>🌾 <b>गेहूं</b><br><small>मुज़फ़्फ़रनगर</small></span><b>₹2,586 ⬆️</b></div>
+<div class="mandiItem"><span>🌾 <b>धान</b><br><small>मुज़फ़्फ़रनगर</small></span><b>₹2,203 ⬆️</b></div>
+<div class="mandiItem"><span>🎋 <b>गन्ना</b><br><small>मुज़फ़्फ़रनगर</small></span><b>₹315 ➡️</b></div>
+<div class="mandiItem"><span>🌼 <b>सरसों</b><br><small>मुज़फ़्फ़रनगर</small></span><b>₹5,650 ⬇️</b></div>
+<div class="mandiItem"><span>🍅 <b>टमाटर</b><br><small>मुज़फ़्फ़रनगर</small></span><b>₹1,200 ⬆️</b></div>
+<div class="mandiItem"><span>🧅 <b>प्याज</b><br><small>मुज़फ़्फ़रनगर</small></span><b>₹1,800 ⬆️</b></div>
+<div class="mandiItem"><span>🥔 <b>आलू</b><br><small>मुज़फ़्फ़रनगर</small></span><b>₹900 ⬇️</b></div>
 </div>
-</div>
+<div class="blueCard"><b>☀️ आज का मौसम - 28°C • साफ धूप</b><br>💧 नमी 45% | 🌬️ हवा 12 किमी/घं<br>🤖 <b>AI सलाह:</b> गेहूं अगले हफ़्ते ₹50 बढ़ सकता है, मंगलवार को बेचो। प्याज अभी बेचो।</div>
+<div class="card"><b>💊 दवा सलाह - Behat</b><br><br>🌾 Gehu me peela pan - NPK + Zinc - ₹450<br>🍅 Tamatar me keeda - Neem Tel - ₹250<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo - 7817005859</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859'">💬 WhatsApp Karo</button></div>
 </div>
 
-<!-- ✅ HAR PAGE PER FIX WHATSAPP BUTTON - Neeche Hamesha Rahega -->
-<a href="https://wa.me/917817005859?text=Namaste! Amandeep Krishi Seva Kendra" style="position:fixed;bottom:20px;right:15px;background:#25D366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;z-index:999;box-shadow:0 4px 12px rgba(0,0,0,0.3)">💬</a>
+<!-- ============ PAGE 3 - DAVA ============ -->
+<div id="page_dava" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>💊 दवा सलाह</h1><p>Tumhari Fasal: Gehu | Gaon: Behat</p></div>
+<div class="card" style="border:2px solid #d32f2f">
+<span style="background:#d32f2f;color:#fff;padding:3px 10px;border-radius:10px">🔴 जरूरी - Aaj Hi Dekho</span><br><br>
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" style="width:100%;height:220px;object-fit:cover;border-radius:12px">
+<br><b style="font-size:18px">🌾 गेहूं में पीला पन आ रहा है?</b><br>💊 Dava: <b>NPK 19:19:19 + Zinc</b><br>💰 Rate: ₹450 / Kilo<br>📏 Matra: 1 Acre me 2 Kilo - Subah Spray Karo<br>
+<div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div>
+<button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo - 7817005859</button>
+<button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Gehu me peela pan hai, dava chahiye'">💬 WhatsApp per Puchho</button>
+</div>
+<div class="card"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80" style="width:100%;height:200px;object-fit:cover;border-radius:12px"><b>🍅 टमाटर में कीड़ा आ रहा है?</b><br>💊 Dava: <b>Neem Tel + Rogor</b> - ₹250 / Litre<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
+<div class="card"><b>🎋 गन्ने की मोटाई कैसे बढ़ाएं?</b><br>💊 Dava: <b>Potash + Urea</b> - ₹380<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
+<div class="card"><b>🌼 सरसों में माहू लग गया?</b><br>💊 Dava: <b>Rogor + Dimethoate</b> - ₹180 / Litre<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
+<div class="card" style="border:2px solid #25D366"><b>💬 Dava ke liye Message Bhejo</b><br><input id="davaName" placeholder="👤 Apna Naam"><input id="davaMsg" placeholder="✍️ Kaunsi fasal me kya problem hai?"><button class="btn btnW" onclick="sendDava()">💬 Message Bhejo - 7817005859</button></div>
+</div>
+
+<!-- ============ PAGE 4 - REELS ============ -->
+<div id="page_reels" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>🌾 किसान Reels</h1><p>Real Kisan • Real Kheti</p></div>
+<div class="waBox"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 WhatsApp: <b>7817005859</b><br><span style="font-size:12px">💬 Message isi per aayega</span><button onclick="window.location.href='https://wa.me/917817005859?text=Namaste! Reel dekhi'">💬 WhatsApp per Message Karo</button></div>
+<div class="card" style="border:2px solid #25D366"><b>💬 Amandeep Bhai ko Message Bhejo</b><br><small>Ye message sidha 7817005859 per jayega</small><input id="msgName" placeholder="👤 Apna Naam - Ram Singh"><input id="msgText" placeholder="✍️ Message - Gehu me peela pan hai"><button class="btn btnW" onclick="sendMsg()">💬 Message Bhejo - 7817005859</button></div>
+<div class="card" style="padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" style="width:100%;height:300px;object-fit:cover"><div style="padding:12px"><b>🌾 गेहूं की अच्छी पैदावार के टिप्स</b><br>👨‍🌾 Real Kisan - Punjab | ❤️ 12.5K • 👁️ 45K<br><button class="btn" onclick="alert('Liked! ❤️')">❤️ लाइक करें</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Gehu wali Reel dekhi'">💬 Message - 7817005859</button></div></div>
+<div class="card" style="padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80" style="width:100%;height:300px;object-fit:cover"><div style="padding:12px"><b>🍅 टमाटर की फसल में रोग प्रबंधन</b><br>👨‍🌾 Real Kisan - UP | ❤️ 9.2K • 👁️ 28K<br><button class="btn" onclick="alert('Liked! ❤️')">❤️ लाइक करें</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Tamatar wali Reel dekhi'">💬 Message - 7817005859</button></div></div>
+<div class="card" style="padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80" style="width:100%;height:300px;object-fit:cover"><div style="padding:12px"><b>🚜 ट्रैक्टर से खेती आसान और तेज़</b><br>👨‍🌾 Real Kisan - Saharanpur | ❤️ 15.1K • 👁️ 62K<br><button class="btn" onclick="alert('Liked! ❤️')">❤️ लाइक करें</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Tractor wali Reel dekhi'">💬 Message - 7817005859</button></div></div>
+<div class="card" style="padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80" style="width:100%;height:300px;object-fit:cover"><div style="padding:12px"><b>🌾 धान की फसल में पानी का सही तरीका</b><br>👨‍🌾 Real Kisan - Haryana | ❤️ 18.3K • 👁️ 71K<br><button class="btn" onclick="alert('Liked! ❤️')">❤️ लाइक करें</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Dhan wali Reel dekhi'">💬 Message - 7817005859</button></div></div>
+<div class="card" style="padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1627920769842-6887c7df05d4?w=800&q=80" style="width:100%;height:300px;object-fit:cover"><div style="padding:12px"><b>🎋 गन्ने की मोटाई कैसे बढ़ाएं</b><br>👨‍🌾 Real Kisan - Behat | ❤️ 21.4K • 👁️ 89K<br><button class="btn" onclick="alert('Liked! ❤️')">❤️ लाइक करें</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Ganna wali Reel dekhi'">💬 Message - 7817005859</button></div></div>
+<div class="card" style="padding:0;overflow:hidden"><img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&q=80" style="width:100%;height:300px;object-fit:cover"><div style="padding:12px"><b>🌱 खेत में खाद डालने का सही समय</b><br>👨‍🌾 Real Kisan - Bihar | ❤️ 11.2K • 👁️ 34K<br><button class="btn" onclick="alert('Liked! ❤️')">❤️ लाइक करें</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Khad wali Reel dekhi'">💬 Message - 7817005859</button></div></div>
+<div class="card"><b>📸 अपनी रील डालो</b><br><input placeholder="रील का नाम - मेरी फसल"><input type="file" accept="video/*" capture="environment"><button class="btn btnO" onclick="alert('Tumhari Reel Upload Ho Gayi! 🎬')">📸 अपनी रील अपलोड करो</button></div>
+</div>
+
+<!-- ============ PAGE 5 - MAUSAM ============ -->
+<div id="page_mausam" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>🌦️ मौसम - Behat</h1><p>Aaj aur Kal ka Mausam</p></div>
+<div class="card" style="text-align:center"><span style="font-size:50px">☀️</span><br><b style="font-size:28px">28°C</b><br>Behat, Saharanpur - Aaj Dhoop Hai<br>💧 Nami: 45% | 🌬️ Hawa: 12 km/h<br><br><b>Kal:</b> 🌧️ Halki Barish - 60% Chance - Spray Mat Karna!</div>
+<div class="card"><b>🌾 Kisan Salah</b><br>✅ Aaj Spray kar sakte ho - Mausam saaf hai<br>❌ Kal Barish hai - Dava mat dalna</div>
+<div class="card"><b>📞 Mausam ki Jankari ke liye</b><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
+</div>
+
+<!-- ============ PAGE 6 - BAZAR ============ -->
+<div id="page_bazar" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>🛒 बाज़ार भाव - Behat Mandi</h1><p>Aaj ka Bhav | Muzaffarnagar + Saharanpur + Delhi Azadpur</p></div>
+<div class="card">🌾 <b>Gehu</b> - ₹2,586 / Quintal ⬆️ 32<br>🌾 <b>Dhan</b> - ₹2,203 / Quintal ⬆️ 15<br>🎋 <b>Ganna</b> - ₹315 / Quintal ➡️<br>🌼 <b>Sarso</b> - ₹5,650 / Quintal ⬇️ 50<br>🍅 <b>Tamatar</b> - ₹1,701 / Quintal ⬆️ 319<br>🧅 <b>Pyaz</b> - ₹3,112 / Quintal ⬆️ 342<br>🥔 <b>Aloo</b> - ₹477 / Quintal ⬇️ 49</div>
+<div class="card"><b>📞 Bhav ke liye Call Karo</b><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
+</div>
+
+<!-- ============ PAGE 7 - BEEJ ============ -->
+<div id="page_beej" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>🌱 बीज - खाद</h1><p>Sabse Sasta - Hamari Dukaan Se</p></div>
+<div class="card"><b>🌾 Gehu Beej HD-2967</b><br>💰 ₹85 / Kilo - 1 Acre = 40 Kilo<br><button class="btn" onclick="window.location.href='https://wa.me/917817005859?text=Gehu Beej chahiye'">💬 Order Karo - 7817005859</button></div>
+<div class="card"><b>🌾 DAP Khad</b><br>💰 ₹1,350 / Bag<br><button class="btn" onclick="window.location.href='https://wa.me/917817005859?text=DAP chahiye'">💬 Order Karo - 7817005859</button></div>
+<div class="card"><b>🌾 Urea</b><br>💰 ₹266 / Bag<br><button class="btn" onclick="window.location.href='https://wa.me/917817005859?text=Urea chahiye'">💬 Order Karo - 7817005859</button></div>
+<div class="card"><b>🌾 Potash</b><br>💰 ₹1,700 / Bag<br><button class="btn" onclick="window.location.href='https://wa.me/917817005859?text=Potash chahiye'">💬 Order Karo - 7817005859</button></div>
+</div>
+
+<!-- ============ PAGE 8 - MESSAGE ============ -->
+<div id="page_msg" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>💬 Message Karo</h1><p>Message sidha 7817005859 per jayega</p></div>
+<div class="card" style="border:2px solid #25D366"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 7817005859<br><br><input id="mName2" placeholder="👤 Apna Naam"><input id="mFasal" placeholder="🌾 Fasal - Gehu / Ganna / Tamatar"><input id="mMsg2" placeholder="✍️ Message likho"><button class="btn btnW" onclick="sendMsg2()">💬 WhatsApp per Bhejo</button><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
+</div>
+
+<!-- ============ PAGE 9 - BECHE ============ -->
+<div id="page_bech" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>📦 बेचें</h1><p>अपनी फसल बेचो - सीधे खरीदार को</p></div>
+<div class="card"><b>🌾 अपनी फसल बेचो</b><br><select><option>फसल चुनो - गेहूं</option><option>धान</option><option>गन्ना</option><option>सरसों</option><option>टमाटर</option><option>प्याज</option></select><input id="bechQty" placeholder="कितने क्विंटल? - जैसे 10"><input id="bechPrice" placeholder="कितने ₹ / क्विंटल चाहते हो? - 2586"><input id="bechName" placeholder="अपना नाम - Narayan Saini"><input id="bechPhone" placeholder="मोबाइल नंबर - 7817005859"><button class="btn btnO" onclick="bechSubmit()">📦 बेचने के लिए डालो</button></div>
+<div class="card"><b>📦 तुम्हारी फसल - Live</b><br><br>🌾 <b>गेहूं - 10 क्विंटल - ₹2,586</b><br>📍 मुज़फ़्फ़रनगर | 👤 Narayan Saini<br><button class="btn" onclick="alert('3 खरीदार ने देखा!')">👁️ खरीदार देखो</button></div>
+</div>
+
+<!-- ============ PAGE 10 - KHARIDAR ============ -->
+<div id="page_kharidar" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>🧑‍🌾 खरीदार</h1><p>तुम्हारी फसल खरीदने वाले</p></div>
+<div class="card"><b>🧑‍🌾 राम सिंह - बेहट</b><br>🌾 गेहूं खरीदेगा - 20 क्विंटल - ₹2,600<br>📞 98765 43210<br><button class="btn btnW" onclick="window.location.href='https://wa.me/919876543210?text=Gehu bechna hai'">💬 WhatsApp Karo</button></div>
+<div class="card"><b>🧑‍🌾 गुरप्रीत - सहारनपुर</b><br>🌾 धान खरीदेगा - 15 क्विंटल - ₹2,250<br>📞 98123 45678<br><button class="btn btnW" onclick="window.location.href='https://wa.me/919812345678?text=Dhan bechna hai'">💬 WhatsApp Karo</button></div>
+<div class="card"><b>🧑‍🌾 Amandeep Krishi Seva Kendra</b><br>🌾 सब फसल खरीदेगा - Behat<br>📞 <b>7817005859</b><br><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo - 7817005859</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859'">💬 WhatsApp Karo</button></div>
+</div>
+
+<!-- ============ PAGE 11 - PROFILE ============ -->
+<div id="page_profile" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>👤 प्रोफाइल</h1><p>नमस्ते, Narayan Saini जी!</p></div>
+<div class="card" style="text-align:center"><div style="font-size:60px">👤</div><b style="font-size:20px">Narayan Saini</b><br>ID: <b>KB8203-90349</b><br>📍 मुज़फ़्फ़रनगर मंडी<br>📞 7817005859<br>🌾 फसल: गेहूं, धान, गन्ना<br><br><button class="btn" onclick="alert('Profile Edit Ho Gayi!')">✏️ प्रोफाइल बदलो</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Profile me madad chahiye'">💬 मदद चाहिए - 7817005859</button></div>
+<div class="card"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📍 Behat, Saharanpur, UP<br>📞 <b>7817005859</b><br><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
+</div>
+
+<!-- BOTTOM NAV - PEHLE WALA -->
+<div class="bottom">
+<div onclick="go('page_home')" id="nav_home" class="active">🏠<br>होम</div>
+<div onclick="go('page_mandi')" id="nav_mandi">🌾<br>मंडी भाव</div>
+<div onclick="go('page_bech')" id="nav_bech">📦<br>बेचें</div>
+<div onclick="go('page_kharidar')" id="nav_kharidar">🧑‍🌾<br>खरीदार</div>
+<div onclick="go('page_profile')" id="nav_profile">👤<br>प्रोफाइल</div>
+</div>
+
+<script>
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('active'));
+  var nav=document.getElementById('nav_'+id.replace('page_',''));
+  if(nav) nav.classList.add('active');
+  window.scrollTo(0,0);
+}
+function speakBhav(){
+  var text='मुज़फ़्फ़रनगर मंडी में गेहूं का भाव 2586 रुपये प्रति क्विंटल है। धान का भाव 2203 रुपये है।';
+  if('speechSynthesis' in window){
+    var u=new SpeechSynthesisUtterance(text); u.lang='hi-IN'; speechSynthesis.speak(u);
+  } else { alert(text); }
+}
+function sendMsg(){
+  var n=document.getElementById('msgName').value||'Kisan';
+  var m=document.getElementById('msgText').value||'Mujhe dava chahiye';
+  window.location.href='https://wa.me/917817005859?text='+encodeURIComponent('Namaste Amandeep Bhai! Main '+n+' hu, Behat se. '+m);
+}
+function sendMsg2(){
+  var n=document.getElementById('mName2').value||'Kisan';
+  var f=document.getElementById('mFasal').value||'Gehu';
+  var m=document.getElementById('mMsg2').value||'Dava chahiye';
+  window.location.href='https://wa.me/917817005859?text='+encodeURIComponent('Namaste! Main '+n+' hu. Fasal: '+f+'. Message: '+m);
+}
+function sendDava(){
+  var n=document.getElementById('davaName').value||'Kisan';
+  var m=document.getElementById('davaMsg').value||'Dava chahiye';
+  window.location.href='https://wa.me/917817005859?text='+encodeURIComponent('Namaste! Main '+n+' hu. '+m);
+}
+function bechSubmit(){
+  var q=document.getElementById('bechQty').value||'10';
+  var p=document.getElementById('bechPrice').value||'2586';
+  alert('Ho Gaya! 🎉 Tumhari '+q+' Quintal Fasal ₹'+p+' per daal di gayi!');
+  go('page_kharidar');
+}
+</script>
+</body>
+</html>
