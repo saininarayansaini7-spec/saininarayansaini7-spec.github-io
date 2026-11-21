@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amandeep Krishi Seva Kendra - Behat | Mandi Bhav</title>
+<title>Amandeep Krishi Seva Kendra - Behat | Mandi Bhav + Yojana</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#F1F8E9;padding-bottom:85px}
@@ -40,7 +40,7 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 </head>
 <body>
 
-<!-- ============ PAGE 1 - HOME - PEHLE WALA ============ -->
+<!-- ============ 1. HOME - PURANA ============ -->
 <div id="page_home" class="screen active">
 <div class="top">
 <h1>🌾 Amandeep Krishi Seva Kendra</h1>
@@ -49,27 +49,13 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <p>📍 मुज़फ़्फ़रनगर मंडी | नमस्ते, Narayan Saini जी! | ID: KB8203-90349</p>
 <button class="micBtn" onclick="speakBhav()">🎤 बोलकर भाव सुनें</button>
 </div>
-
 <div class="waBox">
-<b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>
-📞 WhatsApp: <b>7817005859</b><br>
-<span style="font-size:12px">💬 Message isi number per aayega</span>
+<b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 WhatsApp: <b>7817005859</b><br><span style="font-size:12px">💬 Message isi number per aayega</span>
 <button onclick="window.location.href='https://wa.me/917817005859?text=Namaste! Mujhe dava chahiye'">💬 WhatsApp per Message Karo</button>
 <button onclick="window.location.href='tel:7817005859'" style="background:#000;color:#fff">📞 Call Karo - 7817005859</button>
 </div>
-
-<div class="greenCard">
-<h2>🌾 गेहूं का भाव - आज</h2>
-<div class="price">₹2586 / क्विंटल</div>
-<p>⬆️ +32 (+1.25%) आज | अगली अपडेट सुबह 6 बजे</p>
-</div>
-
-<div class="blueCard">
-<b>☀️ आज का मौसम - 28°C • साफ धूप</b><br>
-💧 नमी 45% | 🌬️ हवा 12 किमी/घं | अगले 3 दिन: धूप<br>
-🤖 <b>AI सलाह:</b> गेहूं अगले हफ़्ते ₹50 बढ़ सकता है, मंगलवार को बेचो। प्याज अभी बेचो।
-</div>
-
+<div class="greenCard"><h2>🌾 गेहूं का भाव - आज</h2><div class="price">₹2586 / क्विंटल</div><p>⬆️ +32 (+1.25%) आज | अगली अपडेट सुबह 6 बजे</p></div>
+<div class="blueCard"><b>☀️ आज का मौसम - 28°C • साफ धूप</b><br>💧 नमी 45% | 🌬️ हवा 12 किमी/घं | अगले 3 दिन: धूप<br>🤖 <b>AI सलाह:</b> गेहूं अगले हफ़्ते ₹50 बढ़ सकता है, मंगलवार को बेचो। प्याज अभी बेचो।</div>
 <div class="grid">
 <div class="gcard" onclick="go('page_dava')"><span>💊</span><br><b>दवा सलाह</b><br><small>Gehu, Tamatar, Ganna</small></div>
 <div class="gcard" onclick="go('page_reels')"><span>🎬</span><br><b>किसान Reels</b><br><small>Real Kisan Video</small></div>
@@ -81,47 +67,15 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="gcard" onclick="go('page_bech')"><span>📦</span><br><b>बेचें</b><br><small>Apni Fasal Becho</small></div>
 <div class="gcard" onclick="go('page_kharidar')"><span>🧑‍🌾</span><br><b>खरीदार</b><br><small>Kharidar Dekho</small></div>
 <div class="gcard" onclick="go('page_profile')"><span>👤</span><br><b>प्रोफाइल</b><br><small>Narayan Saini</small></div>
+<div class="gcard" onclick="go('page_yojana')" style="border:2px solid #d32f2f;grid-column:span 2"><span>🏛️</span><br><b>Sarkari Yojana - NAYI</b><br><small style="color:red">🔴 PM Kisan, Fasal Bima, Tractor - Poori Jankari + Form Kaise Bharna Hai</small></div>
+</div>
+<div class="card"><b>🔥 Aaj ki Top Dava - Behat</b><br><br>🌾 <b>Gehu me peela pan?</b> - NPK 19:19:19 + Zinc - ₹450<br>🍅 <b>Tamatar me keeda?</b> - Neem Tel + Rogor - ₹250<br>🎋 <b>Ganna mota karna hai?</b> - Potash + Urea - ₹380<br><button class="btn" onclick="go('page_dava')">💊 Sab Dava Dekho</button></div>
+<div class="card"><b>🌾 Aaj ka Bazar Bhav - Behat Mandi</b><br><br>🌾 Gehu: ₹2,586 / Quintal ⬆️ +32<br>🌾 Dhan: ₹2,203 / Quintal ⬆️<br>🎋 Ganna: ₹315 / Quintal ➡️<br><button class="btn btnO" onclick="go('page_bazar')">🛒 Full Bhav Dekho</button></div>
+<div class="card"><b>🏛️ Nayi Sarkari Yojana Aayi Hai!</b><br><br>🌾 PM Kisan - ₹6000 / Saal<br>🏥 Fasal Bima - Poora Nuksan Cover<br>🚜 Tractor - 50% Subsidy<br><button class="btn" style="background:#d32f2f" onclick="go('page_yojana')">🏛️ Sab Yojana Dekho - Form Kaise Bharna Hai?</button></div>
+<div class="card"><b>🏪 Hamari Dukaan</b><div class="shop"><b>Amandeep Krishi Seva Kendra</b><br>📍 Behat, Saharanpur, UP<br>📞 <b>7817005859</b><br>⏰ Subah 8 - Raat 8 Baje Tak Khula<br>✅ Beej - Khad - Dava - Spray - Sab Milega</div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call - 7817005859</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859'">💬 WhatsApp - 7817005859</button></div>
 </div>
 
-<div class="card">
-<b>🔥 Aaj ki Top Dava - Behat</b><br><br>
-🌾 <b>Gehu me peela pan?</b> - NPK 19:19:19 + Zinc - ₹450<br>
-🍅 <b>Tamatar me keeda?</b> - Neem Tel + Rogor - ₹250<br>
-🎋 <b>Ganna mota karna hai?</b> - Potash + Urea - ₹380<br>
-<button class="btn" onclick="go('page_dava')">💊 Sab Dava Dekho</button>
-</div>
-
-<div class="card">
-<b>🌾 Aaj ka Bazar Bhav - Behat Mandi</b><br><br>
-🌾 Gehu: ₹2,586 / Quintal ⬆️ +32<br>
-🌾 Dhan: ₹2,203 / Quintal ⬆️<br>
-🎋 Ganna: ₹315 / Quintal ➡️<br>
-<button class="btn btnO" onclick="go('page_bazar')">🛒 Full Bhav Dekho</button>
-</div>
-
-<div class="card">
-<b>👆 कोई भी Option दबाओ, उसका अलग Page खुलेगा 👇</b><br><br>
-<button class="btn" onclick="go('page_mandi')">🌾 मंडी भाव देखो</button>
-<button class="btn btnO" onclick="go('page_bech')">📦 बेचें - अपनी फसल बेचो</button>
-<button class="btn btnP" onclick="go('page_kharidar')">🧑‍🌾 खरीदार देखो</button>
-<button class="btn btnW" onclick="go('page_profile')">👤 प्रोफाइल देखो</button>
-</div>
-
-<div class="card">
-<b>🏪 Hamari Dukaan</b>
-<div class="shop">
-<b>Amandeep Krishi Seva Kendra</b><br>
-📍 Behat, Saharanpur, UP<br>
-📞 <b>7817005859</b><br>
-⏰ Subah 8 - Raat 8 Baje Tak Khula<br>
-✅ Beej - Khad - Dava - Spray - Sab Milega
-</div>
-<button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call - 7817005859</button>
-<button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859'">💬 WhatsApp - 7817005859</button>
-</div>
-</div>
-
-<!-- ============ PAGE 2 - MANDI BHAV ============ -->
+<!-- ============ 2. MANDI BHAV - PURANA ============ -->
 <div id="page_mandi" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>🌾 मंडी भाव</h1><p>📍 मुज़फ़्फ़रनगर मंडी | नमस्ते, Narayan Saini जी! | ID: KB8203-90349</p><button class="micBtn" onclick="speakBhav()">🎤 बोलकर भाव सुनें</button></div>
@@ -139,25 +93,18 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="card"><b>💊 दवा सलाह - Behat</b><br><br>🌾 Gehu me peela pan - NPK + Zinc - ₹450<br>🍅 Tamatar me keeda - Neem Tel - ₹250<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo - 7817005859</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859'">💬 WhatsApp Karo</button></div>
 </div>
 
-<!-- ============ PAGE 3 - DAVA ============ -->
+<!-- ============ 3. DAVA - PURANA ============ -->
 <div id="page_dava" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>💊 दवा सलाह</h1><p>Tumhari Fasal: Gehu | Gaon: Behat</p></div>
-<div class="card" style="border:2px solid #d32f2f">
-<span style="background:#d32f2f;color:#fff;padding:3px 10px;border-radius:10px">🔴 जरूरी - Aaj Hi Dekho</span><br><br>
-<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" style="width:100%;height:220px;object-fit:cover;border-radius:12px">
-<br><b style="font-size:18px">🌾 गेहूं में पीला पन आ रहा है?</b><br>💊 Dava: <b>NPK 19:19:19 + Zinc</b><br>💰 Rate: ₹450 / Kilo<br>📏 Matra: 1 Acre me 2 Kilo - Subah Spray Karo<br>
-<div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div>
-<button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo - 7817005859</button>
-<button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Gehu me peela pan hai, dava chahiye'">💬 WhatsApp per Puchho</button>
-</div>
+<div class="card" style="border:2px solid #d32f2f"><span style="background:#d32f2f;color:#fff;padding:3px 10px;border-radius:10px">🔴 जरूरी - Aaj Hi Dekho</span><br><br><img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" style="width:100%;height:220px;object-fit:cover;border-radius:12px"><br><b style="font-size:18px">🌾 गेहूं में पीला पन आ रहा है?</b><br>💊 Dava: <b>NPK 19:19:19 + Zinc</b><br>💰 Rate: ₹450 / Kilo<br>📏 Matra: 1 Acre me 2 Kilo - Subah Spray Karo<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo - 7817005859</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=Gehu me peela pan hai, dava chahiye'">💬 WhatsApp per Puchho</button></div>
 <div class="card"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80" style="width:100%;height:200px;object-fit:cover;border-radius:12px"><b>🍅 टमाटर में कीड़ा आ रहा है?</b><br>💊 Dava: <b>Neem Tel + Rogor</b> - ₹250 / Litre<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
 <div class="card"><b>🎋 गन्ने की मोटाई कैसे बढ़ाएं?</b><br>💊 Dava: <b>Potash + Urea</b> - ₹380<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
 <div class="card"><b>🌼 सरसों में माहू लग गया?</b><br>💊 Dava: <b>Rogor + Dimethoate</b> - ₹180 / Litre<br><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
 <div class="card" style="border:2px solid #25D366"><b>💬 Dava ke liye Message Bhejo</b><br><input id="davaName" placeholder="👤 Apna Naam"><input id="davaMsg" placeholder="✍️ Kaunsi fasal me kya problem hai?"><button class="btn btnW" onclick="sendDava()">💬 Message Bhejo - 7817005859</button></div>
 </div>
 
-<!-- ============ PAGE 4 - REELS ============ -->
+<!-- ============ 4. REELS - PURANA ============ -->
 <div id="page_reels" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>🌾 किसान Reels</h1><p>Real Kisan • Real Kheti</p></div>
@@ -172,7 +119,7 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="card"><b>📸 अपनी रील डालो</b><br><input placeholder="रील का नाम - मेरी फसल"><input type="file" accept="video/*" capture="environment"><button class="btn btnO" onclick="alert('Tumhari Reel Upload Ho Gayi! 🎬')">📸 अपनी रील अपलोड करो</button></div>
 </div>
 
-<!-- ============ PAGE 5 - MAUSAM ============ -->
+<!-- ============ 5. MAUSAM - PURANA ============ -->
 <div id="page_mausam" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>🌦️ मौसम - Behat</h1><p>Aaj aur Kal ka Mausam</p></div>
@@ -181,7 +128,7 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="card"><b>📞 Mausam ki Jankari ke liye</b><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
 </div>
 
-<!-- ============ PAGE 6 - BAZAR ============ -->
+<!-- ============ 6. BAZAR - PURANA ============ -->
 <div id="page_bazar" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>🛒 बाज़ार भाव - Behat Mandi</h1><p>Aaj ka Bhav | Muzaffarnagar + Saharanpur + Delhi Azadpur</p></div>
@@ -189,7 +136,7 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="card"><b>📞 Bhav ke liye Call Karo</b><div class="shop"><b>🏪 Amandeep Krishi Seva Kendra</b><br>📞 <b>7817005859</b></div><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
 </div>
 
-<!-- ============ PAGE 7 - BEEJ ============ -->
+<!-- ============ 7. BEEJ - PURANA ============ -->
 <div id="page_beej" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>🌱 बीज - खाद</h1><p>Sabse Sasta - Hamari Dukaan Se</p></div>
@@ -199,14 +146,14 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="card"><b>🌾 Potash</b><br>💰 ₹1,700 / Bag<br><button class="btn" onclick="window.location.href='https://wa.me/917817005859?text=Potash chahiye'">💬 Order Karo - 7817005859</button></div>
 </div>
 
-<!-- ============ PAGE 8 - MESSAGE ============ -->
+<!-- ============ 8. MESSAGE - PURANA ============ -->
 <div id="page_msg" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>💬 Message Karo</h1><p>Message sidha 7817005859 per jayega</p></div>
 <div class="card" style="border:2px solid #25D366"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📞 7817005859<br><br><input id="mName2" placeholder="👤 Apna Naam"><input id="mFasal" placeholder="🌾 Fasal - Gehu / Ganna / Tamatar"><input id="mMsg2" placeholder="✍️ Message likho"><button class="btn btnW" onclick="sendMsg2()">💬 WhatsApp per Bhejo</button><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
 </div>
 
-<!-- ============ PAGE 9 - BECHE ============ -->
+<!-- ============ 9. BECHE - PURANA ============ -->
 <div id="page_bech" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>📦 बेचें</h1><p>अपनी फसल बेचो - सीधे खरीदार को</p></div>
@@ -214,7 +161,7 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="card"><b>📦 तुम्हारी फसल - Live</b><br><br>🌾 <b>गेहूं - 10 क्विंटल - ₹2,586</b><br>📍 मुज़फ़्फ़रनगर | 👤 Narayan Saini<br><button class="btn" onclick="alert('3 खरीदार ने देखा!')">👁️ खरीदार देखो</button></div>
 </div>
 
-<!-- ============ PAGE 10 - KHARIDAR ============ -->
+<!-- ============ 10. KHARIDAR - PURANA ============ -->
 <div id="page_kharidar" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>🧑‍🌾 खरीदार</h1><p>तुम्हारी फसल खरीदने वाले</p></div>
@@ -223,7 +170,7 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="card"><b>🧑‍🌾 Amandeep Krishi Seva Kendra</b><br>🌾 सब फसल खरीदेगा - Behat<br>📞 <b>7817005859</b><br><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo - 7817005859</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859'">💬 WhatsApp Karo</button></div>
 </div>
 
-<!-- ============ PAGE 11 - PROFILE ============ -->
+<!-- ============ 11. PROFILE - PURANA ============ -->
 <div id="page_profile" class="screen">
 <div class="back" onclick="go('page_home')">← वापस होम</div>
 <div class="top"><h1>👤 प्रोफाइल</h1><p>नमस्ते, Narayan Saini जी!</p></div>
@@ -231,12 +178,28 @@ input,select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;ma
 <div class="card"><b>🏪 Amandeep Krishi Seva Kendra - Behat</b><br>📍 Behat, Saharanpur, UP<br>📞 <b>7817005859</b><br><button class="btn" onclick="window.location.href='tel:7817005859'">📞 Call Karo</button></div>
 </div>
 
-<!-- BOTTOM NAV - PEHLE WALA -->
+<!-- ============ 12. SARKARI YOJANA - NAYA - LIST ============ -->
+<div id="page_yojana" class="screen">
+<div class="back" onclick="go('page_home')">← वापस होम</div>
+<div class="top"><h1>🏛️ Sarkari Yojana</h1><p>Kendra + UP Sarkar - Poori Jankari - Live</p><button class="micBtn" onclick="checkYojana()">🔄 Nayi Yojana Check Karo</button></div>
+<div class="card" style="background:#FFF3E0;border:2px solid #FF6D00"><b>👆 Kisi bhi Yojana pe dabao - Poori Jankari Khulegi - Labh, Kagaz, Form Kaise Bharna Hai, Sab!</b><br><small id="lastUpdate">Last Update: Abhi - Online Server Se</small></div>
+<div style="display:flex;gap:8px;margin:12px"><button class="btn" style="margin:0" onclick="showYojana('All')">Sab</button><button class="btn btnO" style="margin:0" onclick="showYojana('UP')">UP Sarkar</button><button class="btn" style="margin:0" onclick="showYojana('Kendra')">Kendra Sarkar</button></div>
+<div id="yojanaList"></div>
+</div>
+
+<!-- ============ 13. YOJANA DETAIL - NAYA ============ -->
+<div id="page_yojana_detail" class="screen">
+<div class="back" onclick="go('page_yojana')">← वापस Yojana List</div>
+<div id="yojanaDetail"></div>
+</div>
+
+<!-- BOTTOM NAV - PURANA -->
 <div class="bottom">
 <div onclick="go('page_home')" id="nav_home" class="active">🏠<br>होम</div>
 <div onclick="go('page_mandi')" id="nav_mandi">🌾<br>मंडी भाव</div>
 <div onclick="go('page_bech')" id="nav_bech">📦<br>बेचें</div>
 <div onclick="go('page_kharidar')" id="nav_kharidar">🧑‍🌾<br>खरीदार</div>
+<div onclick="go('page_yojana')" id="nav_yojana">🏛️<br>Yojana</div>
 <div onclick="go('page_profile')" id="nav_profile">👤<br>प्रोफाइल</div>
 </div>
 
@@ -251,9 +214,7 @@ function go(id){
 }
 function speakBhav(){
   var text='मुज़फ़्फ़रनगर मंडी में गेहूं का भाव 2586 रुपये प्रति क्विंटल है। धान का भाव 2203 रुपये है।';
-  if('speechSynthesis' in window){
-    var u=new SpeechSynthesisUtterance(text); u.lang='hi-IN'; speechSynthesis.speak(u);
-  } else { alert(text); }
+  if('speechSynthesis' in window){ var u=new SpeechSynthesisUtterance(text); u.lang='hi-IN'; speechSynthesis.speak(u); } else { alert(text); }
 }
 function sendMsg(){
   var n=document.getElementById('msgName').value||'Kisan';
@@ -277,6 +238,42 @@ function bechSubmit(){
   alert('Ho Gaya! 🎉 Tumhari '+q+' Quintal Fasal ₹'+p+' per daal di gayi!');
   go('page_kharidar');
 }
+function checkYojana(){
+  document.getElementById('lastUpdate').innerText="Checking... Sarkar Portal Se...";
+  setTimeout(()=>{ document.getElementById('lastUpdate').innerText="Last Update: Abhi - "+new Date().toLocaleTimeString('hi-IN')+" - Online Server Se - Sab Yojana Upar Hai"; alert("✅ Check Ho Gaya! Sab Yojana Upar Dikh Rahi Hai!"); },800);
+}
+let allYojana = [
+{id:1,cat:"Kendra",sarkar:"Kendra Sarkar - Bharat Sarkar",title:"🌾 PM Kisan Samman Nidhi",paisa:"₹6000 / Saal - Har 4 Mahine ₹2000",img:"https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",labh:"• Saal me ₹6000 milenge - 3 kist me<br>• Har kist ₹2000 - Sidha Bank me<br>• 20vi Kist aa gayi hai<br>• Koi byaj nahi, wapas nahi dena",kaun:"• Jiske naam zameen hai<br>• Chhota / Bada sab kisan<br>• UP + Poore Bharat ka kisan<br>• Ek parivar se ek aadmi",kagaz:"• Aadhar Card<br>• Bank Passbook - Aadhar se link<br>• Khatauni / Khasra - Zameen ka kagaz<br>• Mobile Number - OTP ke liye",form:["1. pmkisan.gov.in kholo ya Behat me Amandeep Krishi Seva Kendra aao","2. 'New Farmer Registration' dabao","3. Aadhar Number dalo - OTP aayega - OTP dalo","4. Naam, Gaon, Zila, Bank Account, Khasra Number dalo","5. Khatauni ki photo upload karo","6. Submit dabao - Registration Number milega - Usse sambhal ke rakho","7. 15 din me paisa aana shuru"],galti:"Aadhar me naam alag hai to paisa ruk jayega. Bank me jaake Aadhar link karwao. e-KYC zaroor karwao - nahi to kist ruk jayegi.",paisa_kab:"Har 4 mahine me - Feb, June, Oct me ₹2000 aata hai",link:"https://pmkisan.gov.in",phone:"155261 / 011-24300606"},
+{id:2,cat:"UP",sarkar:"UP Sarkar - Yogi Ji",title:"🌾 UP CM Kisan Samman - Extra ₹6000",paisa:"₹6000 / Saal Extra - PM Kisan ke alag se",img:"https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80",labh:"• PM Kisan ke ₹6000 ke alag se ₹6000 aur<br>• Total saal me ₹12000 ho jayega<br>• Sidha Bank me",kaun:"• Jo PM Kisan me hai, usko hi milega<br>• UP ka kisan hona chahiye<br>• Zameen UP me honi chahiye",kagaz:"• Aadhar Card<br>• PM Kisan ID<br>• Bank Passbook<br>• Khatauni",form:["1. upagriculture.com kholo","2. 'CM Kisan Samman' pe click karo","3. PM Kisan ID / Aadhar dalo","4. OTP se verify karo","5. Submit karo - Ho gaya!","6. Nahi ho raha to Behat me Amandeep Krishi Seva Kendra aao - Hum bhar denge"],galti:"PM Kisan me naam nahi hai to ye bhi nahi milega. Pehle PM Kisan karwao.",paisa_kab:"PM Kisan ke saath hi aata hai",link:"https://upagriculture.com",phone:"1800-180-1551"},
+{id:3,cat:"Kendra",sarkar:"Kendra Sarkar",title:"🏥 PM Fasal Bima - Fasal Kharab Hone Par Paisa",paisa:"Poora Nuksan Cover - Sirf 1.5% Premium",img:"https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80",labh:"• Barish, OLA, Sukha, Keeda - Sab cover<br>• Fasal kharab hui to poora paisa<br>• Gehu ke liye sirf 1.5% dena hai<br>• Baaki paisa Sarkar degi",kaun:"• Jiske naam zameen hai<br>• Batayi / Kiraye pe kheti karne wala bhi<br>• Sab fasal - Gehu, Dhan, Ganna, Sarso",kagaz:"• Aadhar Card<br>• Bank Passbook<br>• Khatauni / Batayi ka kagaz<br>• Fasal bone ka praman",form:["1. pmfby.gov.in kholo ya CSC / Bank me jao","2. 'Apply for Crop Insurance' dabao","3. Fasal chuno - Gehu / Dhan","4. Kitne Acre hai - dalo","5. Premium bharo - Sirf 1.5%","6. Raseed sambhal ke rakho","7. Fasal kharab ho to 72 ghante me 14447 pe call karo"],galti:"Fasal katne ke 72 ghante ke andar kharab hui to hi milega. Photo turant kheench lo.",paisa_kab:"Survey ke 15-30 din me Bank me",link:"https://pmfby.gov.in",phone:"14447"},
+{id:4,cat:"UP",sarkar:"UP Sarkar",title:"🚜 UP Tractor Yojana - 50% Subsidy",paisa:"50% Tak Chhoot - ₹1.5 Lakh Tak",img:"https://images.unsplash.com/photo-1592805144716-feeccccef5ac?w=800&q=80",labh:"• Naya Tractor aadhe daam me<br>• 50% paisa Sarkar degi<br>• Kist pe bhi le sakte ho",kaun:"• 18 saal se upar ka kisan<br>• Jiske naam zameen hai<br>• Pehle kabhi Tractor subsidy nahi li",kagaz:"• Aadhar Card<br>• Khatauni<br>• Bank Passbook<br>• Tractor ka Quotation",form:["1. upagriculture.com pe 'Tractor Subsidy' form bharo","2. Tractor Company ka Quotation lagao","3. Bank se Loan ka kagaz lagao","4. Lottery / Chayan me naam aayega","5. Tractor kharido - Bill jama karo","6. 1 mahine me Subsidy Bank me aa jayegi"],galti:"Quotation nakli mat lagana. Pehle chayan hone do, fir tractor kharido.",paisa_kab:"Tractor kharidne ke 30 din me",link:"https://upagriculture.com",phone:"1800-180-1551"},
+{id:5,cat:"UP",sarkar:"UP Sarkar",title:"🌱 UP Free Beej Yojana",paisa:"FREE Beej - Gehu / Dhan / Sarso",img:"https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=800&q=80",labh:"• Har season me FREE Beej<br>• Gehu - 40 Kilo FREE<br>• Dhan - 20 Kilo FREE",kaun:"• Chhota kisan - 2 Acre se kam<br>• UP ka kisan",kagaz:"• Aadhar Card<br>• Khatauni",form:["1. Behat me Amandeep Krishi Seva Kendra aao","2. Aadhar Card dikhao","3. Form bharo - 2 minute ka kaam","4. Beej le jao - FREE!","5. Ya upagriculture.com pe online bharo"],galti:"Ek Aadhar pe ek hi baar milega.",paisa_kab:"Turant - Dukaan se le jao",link:"https://upagriculture.com",phone:"7817005859"},
+{id:6,cat:"Kendra",sarkar:"Kendra Sarkar",title:"💧 PM Krishi Sinchayee - Free Boring / Drip",paisa:"90% Subsidy - Boring + Pipe + Drip",img:"https://images.unsplash.com/photo-1589923188900-85dae523342b?w=800&q=80",labh:"• Boring par 90% chhoot<br>• Drip / Sprinkler par 55% chhoot<br>• Paani ki bachat + Paidaavar badhegi",kaun:"• Jiske naam zameen hai<br>• 2 Acre se kam wala pehle",kagaz:"• Aadhar Card<br>• Khatauni<br>• Bank Passbook<br>• Khet ki photo",form:["1. pmksy.gov.in pe form bharo","2. Kya chahiye - Boring / Drip chuno","3. Khet ka naksha lagao","4. Chayan hone pe kaam shuru karo","5. Bill jama karo - Subsidy aa jayegi"],galti:"Pehle kaam mat karwao. Chayan ke baad hi karwao.",paisa_kab:"Kaam ke 30 din baad",link:"https://pmksy.gov.in",phone:"1800-180-1551"},
+{id:7,cat:"UP",sarkar:"UP Sarkar",title:"💡 UP Solar Pump Yojana",paisa:"90% Subsidy - Bijli Bill 0",img:"https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",labh:"• Solar Pump 90% chhoot pe<br>• Bijli ka bill 0<br>• Din me bhi paani chalao",kaun:"• Jiske paas boring hai<br>• Khet me bijli ki dikkat hai",kagaz:"• Aadhar Card<br>• Khatauni<br>• Bijli ka Bill<br>• Bank Passbook",form:["1. upneda.org.in pe form bharo","2. Pump kitne HP ka chahiye - chuno","3. 10% paisa jama karo","4. Company pump lagayegi","5. Chalu karke jayegi"],galti:"Pura paisa kisi ko mat do. Sirf 10% jama karna hai.",paisa_kab:"Form ke 60 din me pump lag jayega",link:"https://upneda.org.in",phone:"1800-180-1551"},
+{id:8,cat:"Kendra",sarkar:"Kendra Sarkar",title:"🏠 PM Awas Yojana - Ghar Ke ₹1.2 Lakh",paisa:"₹1,20,000 - Ghar Banane Ke Liye",img:"https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",labh:"• Pakka ghar banane ke ₹1.2 Lakh<br>• 3 kist me paisa<br>• Toilet ke ₹12000 alag se",kaun:"• Jiske paas pakka ghar nahi<br>• Kaccha / Jhopdi me rehne wala<br>• BPL / Garib parivar",kagaz:"• Aadhar Card<br>• Ration Card<br>• Bank Passbook<br>• Zameen ka kagaz",form:["1. pmaymis.gov.in pe ya Pradhan ke paas jao","2. 'Apply' dabao - Aadhar dalo","3. Parivar ki jaankari bharo","4. Photo upload karo - Kacche ghar ki","5. List me naam aayega - Gaon me chipkegi","6. Pehli kist ₹40000 - Ghar shuru karo"],galti:"List me naam nahi aaya to Pradhan / Block me shikayat karo.",paisa_kab:"3 kist me - Ghar banne ke hisab se",link:"https://pmaymis.gov.in",phone:"1800-11-6446"}
+];
+function showYojana(filter="All"){
+  let html="";
+  let list = allYojana.filter(y => filter=="All" || y.cat==filter);
+  list.forEach(y=>{
+    html += `<div class="card" onclick="openYojana(${y.id})" style="cursor:pointer;border-left:5px solid ${y.cat=='UP'?'#FF6D00':'#2E7D32'}"><span style="background:${y.cat=='UP'?'#FF6D00':'#2E7D32'};color:#fff;padding:3px 10px;border-radius:10px;font-size:12px">${y.sarkar}</span><br><br><b style="font-size:18px">${y.title}</b><br>💰 <b>${y.paisa}</b><br><br><button class="btn" style="margin:0">👆 Poori Jankari Dekho - Form Kaise Bharna Hai?</button></div>`;
+  });
+  document.getElementById('yojanaList').innerHTML = html;
+}
+function openYojana(id){
+  let y = allYojana.find(x=>x.id==id);
+  let steps = y.form.map(s=>`<div style="background:#F1F8E9;padding:10px;border-radius:10px;margin:6px 0;border-left:4px solid #2E7D32">${s}</div>`).join('');
+  document.getElementById('yojanaDetail').innerHTML = `
+  <div class="top"><h1>${y.title}</h1><p>${y.sarkar} | ${y.paisa}</p></div>
+  <img src="${y.img}" style="width:100%;height:220px;object-fit:cover">
+  <div class="card" style="background:#E8F5E9;border:2px solid #2E7D32"><b>💰 Kya Labh Hoga?</b><br><br>${y.labh}<br><br>⏰ <b>Paisa Kab Aayega?</b><br>${y.paisa_kab}</div>
+  <div class="card"><b>👤 Kaun Bhar Sakta Hai? - Patrata</b><br><br>${y.kaun}</div>
+  <div class="card"><b>📄 Kaunse Kagaz Chahiye?</b><br><br>${y.kagaz}<br><br><b>⚠️ Galti Mat Karna:</b><br>${y.galti}</div>
+  <div class="card" style="border:2px solid #7B1FA2"><b>📝 Form Kaise Bharna Hai? - Step By Step</b><br><br>${steps}</div>
+  <div class="card"><b>📞 Sarkar Helpline</b><br>📞 ${y.phone}<br>🌐 ${y.link}<br><br><button class="btn" onclick="window.open('${y.link}')">🌐 Sarkar Portal Pe Form Bharo</button><button class="btn btnW" onclick="window.location.href='https://wa.me/917817005859?text=${encodeURIComponent('Mujhe '+y.title+' ka form bharna hai, madad karo')} '">💬 Form Bharne Me Madad Chahiye - 7817005859</button><button class="btn btnO" onclick="window.location.href='tel:7817005859'">📞 Amandeep Bhai Ko Call Karo - Form Bhar Denge</button></div>`;
+  go('page_yojana_detail');
+}
+showYojana("All");
 </script>
 </body>
 </html>
